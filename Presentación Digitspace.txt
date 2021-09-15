@@ -4,6 +4,10 @@ Digitspace Inc.
 
 Presentación
 
+Digitspace nace de la idea de un equipo integrado por personal de diferentes áreas de actuación, incluyendo ingenieros, 
+analistas y programadores, lo que repercute en su misión y su alcance comercial. Lo anterior se debe al conocimiento de 
+cada integrante en diversas áreas no sólo a nivel tecnológico y de desarrollo, sino también financiero, contable, 
+productivo y de telecomunicaciones.
 
 En el proyecto a desarrollar se analiza, diseña y construye un software que permite controlar las ventas, 
 tanto físicas como las realizadas de forma virtual de una empresa de manufactura, incluyendo diferentes funcionalidades 
@@ -15,7 +19,7 @@ la aplicación Web.
 Miembros
 
 -
--
+- David Andrés González Medina, profesional en Finanzas y Comercio Internacional con una Maestría en Dirección Financiera. Actualmente reside en Bogotá, Colombia.
 - Daniel Alexander Flórez Orrego, Ingeniero Mecánico Phd en Ing. Mecánica, Investigador de la USP. Actualmente viven en Sao Paulo, Brasil. De Medellín, Antioquia.
 - Katerin Barrera, estudiante de ingeniería Mecatrónica, tecnóloga en gestión de sistemas electromecánicos, y técnica profesional en mantenimiento electromecánico.
 
