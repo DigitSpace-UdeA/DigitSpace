@@ -4,6 +4,9 @@ Digitspace Inc.
 
 Presentación
 
+Digitspace es una iniciativa que surge de la necesidad de ofrecer servicios de gestión de productos, con base en estándares de calidad que faciliten el manejo de la información y la satisfacción de clientes y administradores de productos manufacturados, comercializados mediante aplicaciones web. Dado el auge que ha tenido el comercio electrónico y las facilidades actuales en el acceso a internet, la compañía ofrece su conocimiento en la creación, diseño y mantenimiento de páginas de internet y otras aplicaciones web.
+
+
 Digitspace nace de la idea de un equipo integrado por personal de diferentes áreas de actuación, incluyendo ingenieros, 
 analistas y programadores, lo que repercute en su misión y su alcance comercial. Lo anterior se debe al conocimiento de 
 cada integrante en diversas áreas no sólo a nivel tecnológico y de desarrollo, sino también financiero, contable, 
