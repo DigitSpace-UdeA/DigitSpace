@@ -8,7 +8,8 @@ Presentación
 En el proyecto a desarrollar se analiza, diseña y construye un software que permite controlar las ventas, 
 tanto físicas como las realizadas de forma virtual de una empresa de manufactura, incluyendo diferentes funcionalidades 
 para lograr obtener un seguimiento de dichas ventas. 
-Esto se lleva a cabo empleando múltiples herramientas y módulos que permiten organizar, planear, estructurar y desarrollar la aplicación Web. 
+Esto se lleva a cabo empleando múltiples herramientas y módulos que permiten organizar, planear, estructurar y desarrollar 
+la aplicación Web. 
 
 
 Miembros
