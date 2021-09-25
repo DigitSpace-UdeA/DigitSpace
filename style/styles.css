@@ -74,19 +74,20 @@ ul {
   transform: scale(1.1);
 }
 .loginSection{
-    margin-left: 650px;
+    margin-left: 750px;
     margin-top: 110px;
     padding-top: 10px;
     padding-left: 0px;
     font-weight:lighter;
     text-align: center;
-    width: 330px;
+    width: 300px;
     height: 180px;
-    background-color:rgba(63, 70, 82, 0.849);
-    border-radius: 30px;
+    background-color:rgba(31, 148, 226, 0.658);
+    border-radius: 90px;
     color: white;
-    top: 50%;
-    
+    top: -50%;
+
+    box-shadow: 1px 1px 1px 3px rgb(28, 137, 180) ;
 
     /*transform: translate(220%, -37%);*/
 }
