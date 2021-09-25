@@ -20,15 +20,14 @@ ul {
 .navbar > li {
     display: flex;
     align-self: center;
+    
 }
   
 .nameCompany{
     font-size: x-large;
     padding-top: 25px;
     margin-left: 10px;
-    
-    
-    
+    text-align: center;
 }
 
 .Logo{
