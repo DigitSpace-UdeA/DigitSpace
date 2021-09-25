@@ -47,7 +47,8 @@ ul {
     position: fixed;
     bottom: 0;
     color: white;
-    padding: 10px;
+
+    padding-top: 15px;
 }
 
 .colorIcon{
@@ -66,8 +67,57 @@ ul {
 
 .space{
     margin-right: 50px;
+
 }
 .space:hover{
   cursor: pointer;
   transform: scale(1.1);
+}
+.loginSection{
+    margin-left: 650px;
+    margin-top: 110px;
+    padding-top: 10px;
+    padding-left: 0px;
+    font-weight:lighter;
+    text-align: center;
+    width: 330px;
+    height: 180px;
+    background-color:rgba(63, 70, 82, 0.849);
+    border-radius: 30px;
+    color: white;
+    top: 50%;
+    
+
+    /*transform: translate(220%, -37%);*/
+}
+
+.contenedorImagen{
+  width: 70px;
+  height:90px;
+  display: flex;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+}
+
+.button{
+    border: 0px;
+    border-radius: 6px;
+    padding: 5px 15px;
+    font-weight:lighter;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+
+
+}
+  
+.button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.mainSpace{
+    padding-bottom: 20px;
 }
