@@ -22,8 +22,11 @@ body{
     }
 
 .encabezadoh1{
-    padding: 0px;
-    margin-left: 10px;
+    margin:0px;
+    padding-right: 25px;
+    display: flex;
+    justify-content: end;
+    font-family: montserrat;
 }
 
 
