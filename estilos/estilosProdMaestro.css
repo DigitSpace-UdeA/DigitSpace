@@ -1,3 +1,36 @@
+/*extender el main entre el header y el footer*/
+
+html, body {
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header,
+  footer {
+    flex: none;
+  }
+  
+  main {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    flex: auto;
+  }
+
+/*extender el main entre el header y el footer*/
+
+
+
+
+
+
+
+
 body{
     margin: 0px;
 }
