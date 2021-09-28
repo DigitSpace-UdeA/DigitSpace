@@ -13,126 +13,152 @@
     </header>
     
     <main> 
-        <div class="imagenSeparar">
-            <img src="./media/engranajes.png"/>
+
+
+
+        <div class="formSeparar">
+            <!--<img src="./media/engranajes.png"/>-->
+            <form class="estilosForm">
+                <div class="estilosListar">
+                    <span>Listar todos los productos</span>
+                    <button class="myButton" type="button" onclick="alert('Productos listados exitosamente.')" onclick="funcListar()">Listar</button>
+                </div>
+                
+                <div class="estilosBuscar">
+                    <span>Buscar por:</span>
+                    <div>
+                        <div>
+                            <input type="radio" id="porID" name="busqueda" value="porID" checked>
+                            <label for="porID">Por ID</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="porNombre" name="busqueda" value="porNombre">
+                            <label for="porNombre">Por nombre</label>
+                        </div>
+                    </div>    
+                </div>
+
+                <div class="estilosActualizar">
+                    <span>Actualizar el producto: &nbsp&nbsp&nbsp
+                        <button class="myButton" type="button" onclick="alert('Producto actualizado exitosamente.')" onclick="funcUpdate()">Actualizar</button>
+                    </span>
+                    
+                    <div class="estilosActualizarCampos">
+                        <!--<label for="IdProd">ID del producto</label>-->
+                        <input name ="IdProd" type="text" placeholder="ID del producto" readonly>
+                        <!--<label for="DescProd">Descripción del producto</label>-->
+                        <input name ="DescProd" type="text" placeholder="Descripción del producto">
+                        <!--<label for="ValUnitProd">Valor unitario del producto</label>-->
+                        <input name ="ValUnitProd" type="text" placeholder="Valor unitario del producto">
+                        <!--<label for="DispProd">Disponibilidad del producto</label>-->
+                        <input name ="DispProd" type="text" placeholder="Disponibilidad del producto">
+                    </div>
+                </div>
+            </form>
         </div>
+
+
 
         <div class = "tableContainer scrollConds">
             <table>
                 <thead>
                     <tr>
-                        <th>Vendedores ID</th>
-                        <th>Nombre</th>
-                        <th>Especialidad</th>
-                        <th>Celular</th>
-                        <th>Fecha de Ingreso</th>
+                        <th>Producto ID</th>
+                        <th>Descripción</th>
+                        <th>Valor unitario</th>
+                        <th>Disponibilidad</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>VZ19990204</td>
-                        <td>Carlos Antorio Benjumea Tocancipá</td>
-                        <td>Zapatos</td>
-                        <td>3258963665</td>
-                        <td>1999/02/04</td>
+                        <td>Mesa Rectangular Marca Eliza</td>
+                        <td>160900</td>
+                        <td>Disponible</td>
                     </tr>
                     <tr>
                         <td>VM20040314</td>
-                        <td>Arturo José Betancur</td>
-                        <td>Medias</td>
-                        <td>31524875954</td>
-                        <td>2004/03/14</td>
+                        <td>Silla redonda Ikea</td>
+                        <td>40500</td>
+                        <td>Disponible</td>
                     </tr>
                     <tr>
                         <td>VZ20150605</td>
-                        <td>Luisa Ciprina Mosquera</td>
-                        <td>Zapatos</td>
-                        <td>3132569854</td>
-                        <td>2015/06/05</td>
+                        <td>Armario doble puerta Maderas S.A.</td>
+                        <td>650000</td>
+                        <td>Agotado</td>
                     </tr>
                     <tr>
                         <td>VZ20030810</td>
-                        <td>Dante Jerónimo Suezcún</td>
-                        <td>Zapatos</td>
-                        <td>3012541252</td>
-                        <td>2003/08/10</td>
+                        <td>Camarote metálico Kids Game</td>
+                        <td>290000</td>
+                        <td>Agotado</td>
                     </tr>
                     <tr>
                         <td>VC20091205</td>
-                        <td>Raul José Leguizamo Benítez</td>
-                        <td>Camisas</td>
-                        <td>3005211458</td>
-                        <td>2009/12/05</td>
+                        <td>Aparador Sonatta</td>
+                        <td>150000</td>
+                        <td>Disponible</td>
                     </tr>
                     <tr>
                         <td>VB20210911</td>
-                        <td>Luis Mariano Arenas Marin</td>
-                        <td>Blusas</td>
-                        <td>3125699875</td>
-                        <td>2021/09/11</td>
+                        <td>Mecedora rústica Buitragos</td>
+                        <td>460000</td>
+                        <td>Agotado</td>
                     </tr>
                     <tr>
                         <td>VP20010603</td>
-                        <td>Catalina Estefania Gonzalez Jimenez</td>
-                        <td>Pantalones</td>
-                        <td>3023365895</td>
-                        <td>2001/06/03</td>
+                        <td>Mesa de estudio Ikea</td>
+                        <td>420000</td>
+                        <td>Disponible</td>
                     </tr>
                     <tr>
                         <td>VC20020603</td>
-                        <td>Estiven Orlando Bajadoz Cortes</td>
-                        <td>Camisas</td>
-                        <td>3132596332</td>
-                        <td>2002/06/03</td>
+                        <td>Silla para computador Gamers 2000</td>
+                        <td>890000</td>
+                        <td>Disponible</td>
                     </tr>
                     <tr>
                         <td>VC20120803</td>
-                        <td>Lilia Bajadoz Camargo</td>
-                        <td>Bermudas</td>
-                        <td>3123655874</td>
-                        <td>2012/08/13</td>
+                        <td>Mesa de centro Lily</td>
+                        <td>102000</td>
+                        <td>Agotado</td>
                     </tr>
                     <tr>
                         <td>VA20016102</td>
-                        <td>Gonzalo Hernando Echandia Velez</td>
-                        <td>Accesorios</td>
-                        <td>3023365895</td>
-                        <td>2016/10/02</td>
+                        <td>Espejo rinconero con cajón Rhinos</td>
+                        <td>190300</td>
+                        <td>Disponible</td>
                     </tr>
                     <tr>
                         <td>VS20060910</td>
-                        <td>Maria Camila Cantero Benavides</td>
-                        <td>Sueteres</td>
-                        <td>3139477585</td>
-                        <td>2006/09/10</td>
+                        <td>Estanteria plástica Vivian</td>
+                        <td>65000</td>
+                        <td>Agotado</td>
                     </tr>
                     <tr>
                         <td>VP20030909</td>
-                        <td>Jorge Pedro Luana Doria</td>
-                        <td>Pantalones</td>
-                        <td>3023365895</td>
-                        <td>2003/09/09</td>
+                        <td>Mesa de bar Brooklin</td>
+                        <td>260000</td>
+                        <td>Agotado</td>
                     </tr>
                     <tr>
                         <td>VG20070808</td>
-                        <td>Lorena Patricia Gonzalez Jimenez</td>
-                        <td>Gorras</td>
-                        <td>3152266985</td>
-                        <td>2007/08/08</td>
+                        <td>Guardarropas El Guarro</td>
+                        <td>1500000</td>
+                        <td>Agotado</td>
                     </tr>
                     <tr>
                         <td>VA20150729</td>
-                        <td>Lucia Persefone Gonzalez Aparicio</td>
-                        <td>Accesorios</td>
-                        <td>3152487596</td>
-                        <td>2015/07/29</td>
+                        <td>Perchero de entrada Calimex</td>
+                        <td>63000</td>
+                        <td>Agotado</td>
                     </tr>
                     <tr>
                         <td>VC20020603</td>
-                        <td>Estiven Orlando Bajadoz Cortes</td>
-                        <td>Camisas</td>
-                        <td>3132596332</td>
-                        <td>2002/06/03</td>
+                        <td>Biblioteca con vidrios Lapizlazuli</td>
+                        <td>3500000</td>
+                        <td>Disponible</td>
                     </tr>
                           
                 </tbody>
