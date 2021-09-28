@@ -102,9 +102,6 @@ tr:hover { /* th:hover also if you wish */
 
 
 
-
-
-
 .estilosForm{
     display: flex;
     flex-direction: column;
@@ -127,12 +124,18 @@ tr:hover { /* th:hover also if you wish */
     font-size: 15px;
 }
 
+.myButton:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px gray;
+    transform: scale(1.1);
+}
+
 
 .estilosBuscar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 15%;
+    width: 20%;
     padding: 10px
 }
 
@@ -149,4 +152,10 @@ tr:hover { /* th:hover also if you wish */
     flex-direction: row;
     justify-content: space-around;
     padding-top: 25px;
+}
+
+.inputsActualizar{
+    width: 20%;
+    height: 20px;
+    text-align: center;
 }
