@@ -206,3 +206,9 @@ tr:hover { /* th:hover also if you wish */
     flex-direction: column;
     width: 20%;
 }
+
+
+.estiloDivAMaestro{
+    font-family: montserrat;
+    padding-left: 20px;
+}
