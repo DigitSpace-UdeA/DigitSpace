@@ -1,58 +1,101 @@
-h1{
+body{
+    margin: 0px;
+}
+
+.wall{
+    background-color: beige;
+}
+
+.imagenSeparar{
+    margin: 2rem;
+}
+
+.estiloHeader{
+    
+    display: flex;
+    justify-content: space-between;
     background-color: rgb(75, 74, 74);
     color: beige;
+    margin:0;
+    padding: 0;
+    }
+
+.encabezadoh1{
+    padding: 0px;
+    margin-left: 10px;
 }
 
-table {
-    width: 100%;
-    display:block; /*block*/
-    margin-top: 10%; /*adicionado*/
-    margin-left: auto;
-    margin-right: auto;
-}
-thead {
-    display: inline-block; /*inline-block*/
-    align-content: justify;
-    width: auto; /*100%*/
-    height: 20px;
-    padding-bottom: 10px;
 
-}
-tbody {
-    border:1px solid rgb(255, 254, 254);
-    display: inline-block; /*inline-block*/
-    width: auto;
-    height: 200px;
-    overflow-x: auto; /*auto*/ /*creates the scrollbar*/
-    overflow-y: auto;
-}
-
-td, th{
-    padding-inline: 100px;
-    text-align: justify;
-    border-bottom: 1px solid #ddd;
-    flex-direction: column
+.estiloFooter{
+    display: flex;
+    justify-content: center;
+    font-family: serif;
+    font-size: 30px;
+    background-color: rgb(75, 74, 74);
+    color: beige;
+    margin-bottom:0;
 }
 
 
 
 div>img{
-    height: 300px;
+    height: 250px;
     display:block;
-    margin-left: auto;
+    margin: auto;
     margin-right: auto;
 }
 
 th{
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(126, 126, 126);
     border-radius: 6px;
+    color: beige;
 }
 
 
 
+.tableContainer{
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+th,td{
+    width: 100vw;
+    padding-top: 3px;
+    text-align: center;
+    font-family: montserrat;
+    
+    
+}
+
+
+tbody tr:nth-child(odd) {
+    background: rgb(255, 255, 255);
+}
+
+
+tr:hover { /* th:hover also if you wish */
+    background: rgb(255, 255, 157);
+    
+}
+
+
+
+/*en teoria se coloca en el div, pero hay que*/
+.scrollConds{
+    overflow: hidden;
+    overflow-y:auto;
+    height: 43vh;
+}
+/*hacer estático el head de la tabla para que no scrolle*/
+.scrollConds thead th {
+    position: sticky;
+    top: 0;
+  }
 
 
 
 
-
-/*http://jsfiddle.net/CrSpu/*/
