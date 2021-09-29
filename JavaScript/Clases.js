@@ -40,3 +40,25 @@ window.addEventListener("resize", function(){
     }
 
 });
+
+$(".boton_cliente").click(function(e){
+    e.preventDefault();
+    $("#nombre_cliente").removeAttr("disabled");
+    $("#tel_cliente").removeAttr("disabled");
+    $("#dir_cliente").removeAttr("disabled");
+    $("#email_cliente").removeAttr("disabled");
+
+    $("#registro_cliente").slideDown();
+
+});
+
+registro_cliente;
+
+guardar_cliente; boton
+
+boton_cliente;
+
+agregar_cliente;
+nombre_cliente;
+tel_cliente;
+email_cliente;
