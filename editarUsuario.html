@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900|Ubuntu:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script type="text/javascript" src="./usuarios.json"></script>
+
+    <title>Modulo Usuarios</title>
+
+</head>
+
+<body class="wall">
+    <header>
+        <div class="navbar">
+
+        </div>
+    </header>
+    <main>
+
+        <h1 class="titlulo">Editar - Modulo de Usuarios y Roles</h1>
+
+        <div class="section-edit">
+            <form action="" class="form-edit">
+                
+                <label>
+                    ID
+                    <input class="input-edit" type="text" value="1" id="id-user" readonly="readonly"/>
+                </label>
+                <label>
+                    Usuario
+                    <input class="input-edit" type="text" value="Mark" id="Name-user" readonly="readonly"/>
+                </label>
+                <label>
+                    Rol
+                    <select class="input-edit">
+                        <option>Vendedor</option>
+                        <option>Administrador</option>
+                    </select>
+                </label>
+                <label>
+                    Estado
+                    <select class="input-edit">
+                        <option>Autorizado</option>
+                        <option>No Autorizado</option>
+                    </select>
+                </label>
+                <button class="btn-submit-edit" type="submit">Guardar</button>
+            </form>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

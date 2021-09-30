@@ -107,6 +107,56 @@ button:hover{
     pointer-events: auto;
     opacity: 0.9;
 }
+.section-edit{
+    margin: 2em 0em;
+}
+.form-edit{
+    margin: 0 auto;
+    width: 40em;
+    background-color: #ffffff80;
+    padding: 2em;
+}
+label{
+    display: block;
+    padding: 0.7em;
+
+}
+.input-edit{
+    border:solid 2px #ccc;
+    border-radius: 4px;
+    outline: none;
+    display: block;
+    padding: 0.4em 0em;
+    
+}
+
+.input-edit:focus{
+    border-color:cadetblue;
+}
+.btn-submit-edit{
+    border-radius: 5%;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 0.5em 0.5em;
+    margin-top: 1em;
+}
+.btn-submit-edit:hover{
+    font-weight: bold;
+    color:cadetblue;
+}
+
+.input-delete{
+    border: none;
+    outline: none;
+    background-color: inherit;
+}
+.label-delete{
+    
+}
+
+
+
+
 
 
 
