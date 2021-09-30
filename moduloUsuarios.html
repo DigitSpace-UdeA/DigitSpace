@@ -1,57 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modulo Usuarios</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900|Ubuntu:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <script type="text/javascript" src="./usuarios.json"></script>
+
+  <title>Modulo Usuarios</title>
+
 </head>
-<body>
-    <header>
 
-    </header>
-    <main> 
-        <section>
-            <h1 class="titlulo">Modulo de Usuarios y Roles</h1>
-            <div>
-                <button>Crear nuevo usuario </button>
-            </div>
+<body class="wall">
+  <header>
+    <div class="navbar">
 
-            <div class="tabla_usuarios">
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Rol</th>
-                        <th scope="col">Opciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>vendedor</td>
-                        <td>opciones</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div>
-        </section>
-    </main>
-    <footer>
-    </footer>
+    </div>
+  </header>
+  <main>
+
+      <h1 class="titlulo">Modulo de Usuarios y Roles</h1>
+
+      <div class="section-table">
+        <table class="tabla-usuarios">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Rol</th>
+              <th scope="col">Estado</th>
+              <th scope="col" colspan="2">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Admin</td>
+              <td>
+
+                  <img src="./media/no_Autorizado.svg" alt="imagen" class="icon-eliminar" />
+              </td>
+              <td>
+                <button type="button" class="btn-opcion">
+                  <img src="./media/editar.svg" alt="imagen" class="icon-opciones" id="btn-editar" />
+                </button>
+              </td>
+              <td>
+                <button type="button" class="btn-opcion">
+                  <img src="./media/eliminar_2.svg" alt="imagen" class="icon-opciones" id="btn-eliminar" />
+                </button>
+              </td>
+            </tr>
+            <th scope="row">2</th>
+              <td>Mark</td>
+              <td>vendedor</td>
+              <td>
+                    <img src="./media/autorizado.svg" alt="imagen" class="icon" />
+              </td>
+              <td>
+                <button type="button" class="btn-opcion">
+                  <img src="./media/editar.svg" alt="imagen" class="icon-opciones" id="btn-editar" />
+                </button>
+              </td>
+              <td>
+                <button type="button" class="btn-opcion">
+                  <img src="./media/eliminar_2.svg" alt="imagen" class="icon-opciones" id="btn-eliminar" />
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     
+  </main>
+  <footer>
+    <div class="footer"></div>
+  </footer>
+
+  <script type="text/javascript" src="./javascrip.js"></script>
 </body>
+
 </html>
