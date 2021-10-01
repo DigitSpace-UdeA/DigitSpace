@@ -8,6 +8,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900|Ubuntu:400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
+
+    <script src="https://kit.fontawesome.com/665b3e78a5.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./usuarios.json"></script>
 
     <title>Modulo Usuarios</title>
@@ -26,16 +28,19 @@
 
         <div class="section-edit">
             <form action="" class="form-edit">
-                
+                    
                 <label>
-                    ID
+                    <i class="fas fa-id-card"></i>
+                      ID
                     <input class="input-edit" type="text" value="1" id="id-user" readonly="readonly"/>
                 </label>
                 <label>
+                    <i class="fas fa-user-tie"></i>
                     Usuario
                     <input class="input-edit" type="text" value="Mark" id="Name-user" readonly="readonly"/>
                 </label>
                 <label>
+                    <i class="fas fa-briefcase"></i>
                     Rol
                     <select class="input-edit">
                         <option>Vendedor</option>
@@ -43,13 +48,18 @@
                     </select>
                 </label>
                 <label>
+                    <i class="fas fa-unlock-alt"></i>
                     Estado
                     <select class="input-edit">
                         <option>Autorizado</option>
                         <option>No Autorizado</option>
                     </select>
                 </label>
-                <button class="btn-submit-edit" type="submit">Guardar</button>
+                <button class="btn-submit-edit" type="submit">
+                    <i class="fas fa-save"></i>
+                    Guardar
+                    
+                </button>
             </form>
         </div>
 

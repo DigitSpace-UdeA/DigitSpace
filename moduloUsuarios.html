@@ -8,6 +8,8 @@
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900|Ubuntu:400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="./styles/styles.css">
+
+  <script src="https://kit.fontawesome.com/665b3e78a5.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="./usuarios.json"></script>
 
   <title>Modulo Usuarios</title>
@@ -22,60 +24,79 @@
   </header>
   <main>
 
-      <h1 class="titlulo">Modulo de Usuarios y Roles</h1>
+    <h1 class="titlulo">Modulo de Usuarios y Roles</h1>
 
-      <div class="section-table">
-        <table class="tabla-usuarios">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Usuario</th>
-              <th scope="col">Rol</th>
-              <th scope="col">Estado</th>
-              <th scope="col" colspan="2">Opciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Admin</td>
-              <td>
-
-                  <img src="./media/no_Autorizado.svg" alt="imagen" class="icon-eliminar" />
-              </td>
-              <td>
-                <button type="button" class="btn-opcion">
-                  <img src="./media/editar.svg" alt="imagen" class="icon-opciones" id="btn-editar" />
-                </button>
-              </td>
-              <td>
-                <button type="button" class="btn-opcion">
-                  <img src="./media/eliminar_2.svg" alt="imagen" class="icon-opciones" id="btn-eliminar" />
-                </button>
-              </td>
-            </tr>
+    <div class="section-table">
+      <table class="tabla-usuarios">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Estado</th>
+            <th scope="col" colspan="2">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Admin</td>
+            <td>
+              <img src="./media/no_Autorizado.svg" alt="imagen" class="icon-eliminar" />
+            </td>
+            <td>
+              <button type="button" class="btn-opcion">
+                <i class="fas fa-edit"></i>
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn-opcion">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+          <tr>
             <th scope="row">2</th>
-              <td>Mark</td>
-              <td>vendedor</td>
-              <td>
-                    <img src="./media/autorizado.svg" alt="imagen" class="icon" />
-              </td>
-              <td>
-                <button type="button" class="btn-opcion">
-                  <img src="./media/editar.svg" alt="imagen" class="icon-opciones" id="btn-editar" />
-                </button>
-              </td>
-              <td>
-                <button type="button" class="btn-opcion">
-                  <img src="./media/eliminar_2.svg" alt="imagen" class="icon-opciones" id="btn-eliminar" />
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    
+            <td>Mark</td>
+            <td>Vendedor</td>
+            <td>
+              <img src="./media/autorizado.svg" alt="imagen" class="icon" />
+            </td>
+            <td>
+              <button type="button" class="btn-opcion">
+                <i class="fas fa-edit"></i>
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn-opcion">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <th scope="row">3</th>
+            <td>Mark</td>
+            <td>Usuario</td>
+            <td>
+              <img src="./media/pendiente.svg" alt="imagen" class="icon" />
+            </td>
+            <td>
+              <button type="button" class="btn-opcion">
+                <i class="fas fa-edit"></i>
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn-opcion">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </main>
   <footer>
     <div class="footer"></div>

@@ -1,36 +1,49 @@
-body{
+body {
     margin: 0px;
-    font-family:'Montserrat';
+    font-family: 'Montserrat';
 }
-h1{
+
+h1 {
     padding: 0.5em;
 }
+
 ul {
     list-style: none;
     padding: 0px;
     margin: 0.5em;
 }
-td,th{
+
+td,
+th {
     padding: 0.3em 0.8em;
-}                               
+}
+
+input {
+    font-family: 'Montserrat';
+}
+
 button {
     background-color: #dfe1e2;
-    border-radius: 20px;
+    border-radius: 50px;
     border: none;
-    font-size: 2em;
     cursor: pointer;
-    }
-button:hover{
-        background-color: #ffffff;
-      }
-.inline{
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: cadetblue;
+}
+
+.inline {
     display: inline;
 }
+
 .wall {
-    background-color: rgb(232, 232,224);
+    background-color: rgb(232, 232, 224);
     margin: 0px;
 }
-.navbar{
+
+.navbar {
     display: flex;
     justify-content: space-between;
     padding: 0px;
@@ -40,7 +53,8 @@ button:hover{
     width: 100%;
     height: 3em;
 }
-.footer{
+
+.footer {
     justify-content: space-between;
     background-color: rgb(63, 70, 82);
     width: 100%;
@@ -49,49 +63,64 @@ button:hover{
     bottom: 0;
     padding: 5px;
 }
-.titulo{
+
+.titulo {
     font-weight: bold;
 
 }
-.section-table{
+
+.section-table {
     display: flex;
     margin: 1em 7em 1em 7em;
-    justify-content: center;    
-    background-color:#f5f5f580;
+    justify-content: center;
+    background-color: #ffffff90;
     border-radius: 1em;
     box-shadow: 0 2px 3px #4d4d4d;
 
 }
-.tabla-usuarios{
-    color:#4d4d4d ;
+.section-edit{
+    display: flex;
+    margin: 1em 7em 1em 7em;
+    background-color: #ffffff90;
+    justify-content: center;    
+    border-radius: 1em;
+    box-shadow: 0 2px 3px #4d4d4d;
+}
+
+.tabla-usuarios {
+    color: #4d4d4d;
     padding: 1em;
     margin: 1em;
     justify-content: center;
-    border-collapse:collapse;
-    
- 
+    border-collapse: collapse;
+
+
 }
-.icon{
+
+.icon {
     font-size: xx-small;
     width: 4em;
     height: 4em;
 
 }
-.icon-eliminar{
+
+.icon-eliminar {
     font-size: xx-small;
     width: 3em;
     height: 3em;
 
 }
-.btn-opcion{
- border-radius:  50%;
+
+.btn-opcion {
+    border-radius: 10%;
+    background-color: transparent;
+    padding: 4px;
+    font-size: 1.1em;
 }
-.icon-opciones{
-   width: 0.7em;
-   height: 0.7em;
-}
-.modal-container{
-    background-color: rgb(0, 0, 0,0.3);
+
+
+.modal-container {
+    background-color: rgb(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
     position: fixed;
@@ -103,60 +132,82 @@ button:hover{
     height: 100vh;
     width: 100vw;
 }
-.show{
+
+.show {
     pointer-events: auto;
     opacity: 0.9;
 }
-.section-edit{
-    margin: 2em 0em;
-}
-.form-edit{
+
+.form-edit {
     margin: 0 auto;
     width: 40em;
-    background-color: #ffffff80;
-    padding: 2em;
+    padding: 1em;
 }
-label{
+
+label {
     display: block;
-    padding: 0.7em;
+    padding: 0.6em;
 
 }
-.input-edit{
-    border:solid 2px #ccc;
+
+.input-edit {
+    border: solid 2px #ccc;
     border-radius: 4px;
     outline: none;
     display: block;
     padding: 0.4em 0em;
-    
+
 }
 
-.input-edit:focus{
-    border-color:cadetblue;
+.input-edit:focus {
+    border-color: cadetblue;
 }
-.btn-submit-edit{
+
+.btn-submit-edit {
     border-radius: 5%;
     font-size: 1em;
     font-weight: bold;
     padding: 0.5em 0.5em;
     margin-top: 1em;
 }
-.btn-submit-edit:hover{
+
+.btn-submit-edit:hover {
     font-weight: bold;
-    color:cadetblue;
+    color: cadetblue;
 }
 
-.input-delete{
+.input-delete {
     border: none;
     outline: none;
     background-color: inherit;
+    color: #1d411d;
+    font-weight: bold;
 }
-.label-delete{
-    
+
+.label-delete {
+    color: #4d4d4d;
+
 }
 
 
+.modal-edit {
+    background-color: #00000080;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.popup-edit {
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0 2px 3px #4d4d4d;
+    border-radius: 1em;
+    padding: 2em;
+    text-align: center;
+    width: 20em;
 
-
-
-
+}
