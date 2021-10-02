@@ -51,14 +51,3 @@ $(".boton_cliente").click(function(e){
     $("#registro_cliente").slideDown();
 
 });
-
-registro_cliente;
-
-guardar_cliente; boton
-
-boton_cliente;
-
-agregar_cliente;
-nombre_cliente;
-tel_cliente;
-email_cliente;
