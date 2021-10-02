@@ -7,7 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900|Ubuntu:400,500,700" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/stylesUser.css">
+
+  <link rel="stylesheet" href="style/MainStyles.css">
+  <link rel="stylesheet" href="./style/stylesUser.css">
+
   <script src="https://kit.fontawesome.com/665b3e78a5.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="./usuarios.json"></script>
 
@@ -16,11 +19,27 @@
 </head>
 
 <body class="wall">
-  <header>
-    <div class="navbar">
 
+  <header class="header">
+
+    <div class="icono_menu">
+      <i class="fas fa-bars" id="boton_abrir"></i>
+    </div>
+    <div>
+
+      <div class="nameCompany">
+        <img src="./media/logo.svg" alt="imagen" class="Logo text" /> Compañía de manufactura
+      </div>
+
+      <nav>
+        <div class="aling">
+          <a>Quiénes somos <i class="fas fa-users colorIcon"></i></a>
+          <a>Contáctenos <i class="far fa-envelope colorIcon"></i></a>
+        </div>
+      </nav>
     </div>
   </header>
+
   <main>
 
     <h1 class="titlulo">Modulo de Usuarios y Roles</h1>
@@ -45,19 +64,19 @@
               <img title="No autorizado" src="./media/no_Autorizado.svg" alt="imagen" class="icon-eliminar" />
             </td>
             <td>
-            <a href="./editarUsuario.html">
-              <button  title="Editar" type="button" class="btn-opcion">
-                
-                <i class="fas fa-edit"></i>
-              </button>
-            </a>
+              <a href="./editarUsuario.html">
+                <button title="Editar" type="button" class="btn-opcion">
+
+                  <i class="fas fa-edit"></i>
+                </button>
+              </a>
             </td>
             <td>
               <a href="./eliminarUsuario.html">
-              <button title="Eliminar" type="button" class="btn-opcion">
-                <i class="fas fa-trash-alt"></i>
-              </button>
-            </a>
+                <button title="Eliminar" type="button" class="btn-opcion">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </a>
             </td>
           </tr>
           <tr>
@@ -102,8 +121,23 @@
     </div>
 
   </main>
-  <footer>
-    <div class="footer"></div>
-  </footer>
+
+  <footer class="footer">
+    <div>
+        <center>
+            <span> Copyright © 2021 · Software administrativo | Todos los derechos reservados
+                <div style="color: rgb(31, 148, 226);">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </span>
+        </center>
+    </div>
+</footer>
+
 </body>
+
 </html>
