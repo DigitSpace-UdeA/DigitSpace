@@ -23,7 +23,8 @@ input {
 }
 
 button {
-    background-color: #dfe1e2;
+    background-color:cadetblue;
+    color: #e5e7e9  ;
     border-radius: 50px;
     border: none;
     cursor: pointer;
@@ -105,6 +106,7 @@ span{
 }
 
 .btn-opcion {
+    color:rgb(66, 66, 66);
     border-radius: 10%;
     background-color: transparent;
     padding: 4px;
