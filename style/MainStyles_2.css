@@ -18,33 +18,6 @@ main{
     padding: 20px 50px 100px 50px;
 }
 
-/*header{
-    width: 100%;
-    height: 110px;
-    background: rgb(63, 70, 82);
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    z-index: 200;
-}
-.icono_menu{
-    width: 50px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(10px);
-    color: rgb(31, 148, 226);
-}
-.icono_menu i{
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
-}
-.icono_menu i:hover{
-    transform: scale(1.15);
-}*/
 .icono_menu{
     width: 15px;
     height: 15;
@@ -139,19 +112,6 @@ header .icono_menu:hover{
     cursor: pointer;
 }
 
-/*
-a.seleccionado{
-    color:whitesmoke;
-} /* Poner el palo blanco que señala la opción que se selecciona */
-/*.seleccionado::before{
-    content: "";
-    width: 3px;
-    height: 75%;
-    background: yellow;
-    position: absolute;
-    top: 10%;
-    margin-left: -16px;
-}
 /* Se crean unas clases para programar el movimiento del side bar en Javascript */
 .cuerpo_movimiento{
     margin-left: 200px;
@@ -199,29 +159,25 @@ ul {
     height: 60px;
     margin-left: 20px;
 }
-header{
 
-width: 100%;
-overflow: hidden;
-background: rgb(63, 70, 82);
-margin-bottom: 0px;
+header{
+    width: 100%;
+    overflow: hidden;
+    background: rgb(63, 70, 82);
+    margin-bottom: 0px;
 }
 
-header .nameCompany {
-   
+header .nameCompany {   
     color: white;
     font-size: 25px;
     line-height: 60px;
     float: left;
 }
 
-header nav{
-    
+header nav{    
     float:right;
     line-height: 60px;
     font-size: 19px;
-
-
 }
 
 header nav a{
