@@ -1,125 +1,262 @@
-body{
-    margin: 0px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
+
+body{
+    margin-left: 75px;
+   /* margin-top: 80px;*/
+    /* Transición para que el sidbar se muestre cuando se oprima el botón. */
+    transition: margin-left 200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    background-color: rgb(232, 232,224);
+    font-family: 'Montserrat';
+}
+
+main{
+    padding: 20px 50px 100px 50px;
+}
+
+/*header{
+    width: 100%;
+    height: 110px;
+    background: rgb(63, 70, 82);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+.icono_menu{
+    width: 50px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(10px);
+    color: rgb(31, 148, 226);
+}
+.icono_menu i{
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+}
+.icono_menu i:hover{
+    transform: scale(1.15);
+}*/
+.icono_menu{
+    width: 15px;
+    height: 15;
+    margin-left: 20px;
+    color: rgb(31, 148, 226);
+}
+
+header .icono_menu {
+    line-height: 60px;
+    float: left;
+}
+
+header .icono_menu:hover{
+    cursor: pointer;
+    transform: scale(1.3);
+  }
+
+
+/* SideBar */
+.menu_sidebar{
+    width: 75px;
+    height: 100%;
+    background: rgb(2, 24, 6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: rgb(31, 148, 226);
+    font-size: 15px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 19px solid rgb(2, 24, 6);
+    /* Transición para que el sidebar se muestre cuando se oprima nuevamente el botón. */
+    transition: all 200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+/* Se oculta el scrollbar para Chrome, Safari y Opera para hacerlo Responsive. */
+.menu_sidebar::-webkit-scrollbar{
+    display: none;
+}
+
+/* Se oculta el scrollbar para FireFox y Edge para hacerlo Responsive. */
+.menu_sidebar{
+    -ms-overflow-style: none;
+    stroke-width: none;
+}
+
+.menu_principal{
+    padding: 20px 23px;
+    display: flex;
+    align-items: center;
+}
+
+.menu_principal i{
+    width: 20px;
+    margin-right: 20px;
+}
+
+.opciones_menu{
+    padding: 20px 20px;
+    position: absolute;
+    top: 80px;
+}
+
+.opciones_menu a{
+    color:rgb(31, 148, 226);
+    cursor: default;
+    display: block;
+    position: relative;
+    transition: color 500ms;
+}
+
+.opciones_menu a:hover{
+    color: whitesmoke;
+}
+
+.opciones_menu .opcion{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.opciones_menu .opcion i{
+    width: 20px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.opciones_menu .opcion h4{
+    font-weight: 300;
+    cursor: pointer;
+}
+
+/*
+a.seleccionado{
+    color:whitesmoke;
+} /* Poner el palo blanco que señala la opción que se selecciona */
+/*.seleccionado::before{
+    content: "";
+    width: 3px;
+    height: 75%;
+    background: yellow;
+    position: absolute;
+    top: 10%;
+    margin-left: -16px;
+}
+/* Se crean unas clases para programar el movimiento del side bar en Javascript */
+.cuerpo_movimiento{
+    margin-left: 200px;
+}
+
+.menu_sidebar_movimiento{
+    width: 200px;
+}
+
+/* Cuando la pantalla es muy pequeña es necesario ajustar la página para que no se dañe la lógica del sidebar; para ello es necesario ajustarlo para pantallas pequeñas ajustándolo a 760px como base. */
+
+@media screen and (max-width: 760px) {
+    .cuerpo_movimiento{
+        margin-left: 0px;
+    }
+
+    .menu_sidebar_movimiento{
+        width: 80px;
+        left: -80px;
+    }
+}
+
+/* Header y Footer Principal -------------------------------------------*/
+
 ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
 }
 
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    background-color: rgb(63, 70, 82);
-    box-shadow: 10px solid gray;
-    border-bottom: 0px solid gray;
-    color: white;
-}
-  
-.navbar > li {
-    display: flex;
-    align-self: center;
-    
-}
-  
-.nameCompany{
-    font-size: x-large;
-    padding-top: 25px;
-    margin-left: 10px;
-    text-align: center;
-}
-
-.Logo{
-    height: 100px;
-    margin-left: 20px;
-}
-
-.wall {
-    background-color: rgb(232, 232,224);
-}
-
 .footer{
     justify-content: space-between;
     background-color: rgb(63, 70, 82);
     width: 100%;
-    height: 50px;
+    height: 60px;
     position: fixed;
     bottom: 0;
     color: white;
+    padding: 10px;
+}
 
-    padding-top: 15px;
+
+/*header-----------------------------------------------------------------------------------------------------------*/
+.Logo{
+    height: 60px;
+    margin-left: 20px;
+}
+header{
+
+width: 100%;
+overflow: hidden;
+background: rgb(63, 70, 82);
+margin-bottom: 0px;
+}
+
+header .nameCompany {
+   
+    color: white;
+    font-size: 25px;
+    line-height: 60px;
+    float: left;
+}
+
+header nav{
+    
+    float:right;
+    line-height: 60px;
+    font-size: 19px;
+
+
+}
+
+header nav a{
+    display:inline-block;
+    color:white;
+    text-decoration: none;
+    padding: 5px 30px;
+    line-height: normal;
+}
+
+header nav a:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+
+ 
+.nameCompany{
+    padding-top: 0px;
+    margin-left: 0px;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    float: left;
+}
+.text{
+    vertical-align: middle;
 }
 
 .colorIcon{
-   color: rgb(31, 148, 226);
-}
+    color: rgb(31, 148, 226);
+ }
 
-.iconHeader{
-    padding: 10px;
-    display: flex;
-    margin: 10px;
-    margin-top: 20px;
-    margin-right: 15px;
-    justify-content: space-between;
-    font-size: large;
-}
+ /* estilos main *>*/
 
-.space{
-    margin-right: 50px;
-
-}
-
-.space:hover{
-  cursor: pointer;
-  transform: scale(1.1);
-}
-.loginSection{
-    margin-left: 900px;
-    margin-top: 110px;
-    padding-top: 10px;
-    padding-left: 0px;
-    font-weight:lighter;
+ .title{
     text-align: center;
-    width: 300px;
-    height: 180px;
-    background-color:rgba(71, 95, 110, 0.61);
-    border-radius: 90px;
-    color: white;
-    top: -50%;
-
-    box-shadow: 1px 1px 1px 3px rgba(28, 137, 180, 0.486) ;
-
-    /*transform: translate(220%, -37%);*/
-}
-
-.contenedorImagen{
-  width: 70px;
-  height:90px;
-  display: flex;
-  margin-bottom: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 10px;
-}
-
-.button{
-    border: 0px;
-    border-radius: 6px;
-    padding: 5px 15px;
-    font-weight:lighter;
-    background-color: black;
-    color: white;
-    justify-content: space-between;
-
-
-}
-  
-.button:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-}
-
-.mainSpace{
-    padding-bottom: 20px;
-}
+ }

@@ -1,71 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Principal</title>
 
-    <link rel="stylesheet" href="style/MainStyles.css">  
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900|Ubuntu:400,500,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/styles.css">
 
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 
 </head>
-<body id="cuerpo">
-    <header>
-        <section class="icono_menu">
-            <i class="fas fa-bars" id="boton_abrir"></i>
-        </section>
 
-        <section>
-            <ul class="navbar">
-                <li>
-                    <img src="./media/logo.svg" alt="imagen" class="Logo" />
-                    <span class="nameCompany"> Compañía de manufactura
-                        <div style="font-size:medium">By DigitSpace</div>
-                    </span>
-                </li>
-            
-                <div class="iconHeader">            
-            
-                    <li>
-                        <div class="space">
-                            <span> Quiénes somos
-                                <div class="colorIcon">
-                                    <center>
-                                        <i class="fas fa-users"></i>
-                                    </center>
-                                </div>
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="space">
-                            <span> Contáctenos
-                                <div class="colorIcon">
-                                    <center>
-                                        <i class="far fa-envelope"></i>
-                                    </center>
-                                </div>
-                            </span>
-                        </div>
-                    </li>
+<body id="cuerpo">
+    <header class="header">
+
+        <div class="icono_menu">
+            <i class="fas fa-bars" id="boton_abrir"></i>
+        </div>
+        <div>
+
+            <div class="nameCompany">
+                <img src="./media/logo.svg" alt="imagen" class="Logo text" /> Compañía de manufactura
+            </div>
+
+            <nav>
+                <div class="aling">
+                    <a>Quiénes somos <i class="fas fa-users colorIcon"></i></a>
+                    <a>Contáctenos <i class="far fa-envelope colorIcon"></i></a>
                 </div>
-            </ul>
-        </section>
+            </nav>
+        </div>
+
 
     </header>
-    
+
     <!-- Sección del Sidebar -->
     <div class="menu_sidebar" id="menu_sidebar">
-        
+
         <section class="menu_principal">
             <i class="fab fa-buromobelexperte"></i>
             <h3> Muebles Wood-Art </h3>
         </section>
-        
+
         <section class="opciones_menu">
-            
+
             <a href="#" class="seleccionado">
                 <div class="opcion">
                     <i class="fas fa-home" title="Inicio"></i>
@@ -75,7 +57,13 @@
             <a href="#">
                 <div class="opcion">
                     <i class="fas fa-couch" title="Productos"></i>
-                    <h4> Productos </h4>
+                    <h4> Registrar Productos </h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="opcion">
+                    <i class="fas fa-luggage-cart"></i>
+                    <h4> Gestionar Productos </h4>
                 </div>
             </a>
             <a href="#">
@@ -106,10 +94,15 @@
     </div>
 
     <main>
-        <h1> Prueba con contenido en la página </h1> <br>
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore vitae placeat consectetur iure temporibus repudiandae maiores aliquid dolor eveniet! Illum quibusdam iusto velit similique? Ab nam quae assumenda quo perferendis tenetur, suscipit nesciunt? A, odio hic consectetur similique tempora aliquam tempore, in voluptas assumenda repellat quidem? Reprehenderit, est. Eligendi ducimus est voluptatibus illo eaque facilis tenetur beatae rem aliquid delectus et, mollitia cupiditate. Consequuntur quos sint ipsum repudiandae debitis fugiat ratione tenetur provident. Alias, placeat pariatur nihil expedita quo quis? </p> <br>
-
-        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ducimus provident, ipsam, soluta ab dolores aspernatur alias nam ipsa aliquid aliquam ratione optio eum atque voluptates? Sit labore esse ratione aliquam odio ullam quis provident soluta quo sequi, doloremque deleniti excepturi ab numquam veniam architecto itaque ad modi. Dolorem, necessitatibus deserunt itaque repellendus incidunt deleniti sed quos, non illo vero impedit dignissimos nobis neque. Totam, tenetur quibusdam! </p>
+        <h1 class="title"> ¡Bienvenido! </h1> <br>
+        <p>¡Bienvenido! Nuevamente estamos aquí para decirte que esperamos que esta empresa sea tu hogar durante muchos
+            años y que nos trate a todos como una segunda familia.
+            <br><br>
+            Desde ahora compartiremos momentos inolvidables y tendremos éxito asegurado. Tu forma de trabajo sumará
+            muchos puntos positivos al grupo y aprenderemos mucho de tí.
+        </p> <br>
+        <p>Te deseamos un productivo y feliz día, recuerda que a cada momento nace una nueva oportunidad para poder
+            desempeñarte y crecer a nivel laboral y personal!</p>
 
         <link rel="stylesheet" href="style/Carrusel_3D.css">
 
@@ -152,4 +145,5 @@
         </div>
     </footer>
 </body>
+
 </html>

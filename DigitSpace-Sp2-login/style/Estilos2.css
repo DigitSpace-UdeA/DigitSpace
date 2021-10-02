@@ -1,0 +1,219 @@
+body{
+    margin: 0px;
+    font-family: 'Montserrat';
+}
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+}
+
+/*header*/
+.Logo{
+    height: 60px;
+    margin-left: 20px;
+}
+header{
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    background: rgb(63, 70, 82);
+    margin-bottom: 0px;
+}
+
+header .nameCompany {
+    color: white;
+    font-size: 30px;
+    line-height: 100px;
+    float: left;
+}
+
+header nav{
+    float:right;
+    line-height: 100px;
+    font-size: 20px;
+}
+
+header nav a{
+    display:inline-block;
+    color:white;
+    text-decoration: none;
+    padding: 0px 30px;
+    line-height: normal;
+}
+
+header nav a:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Acordarse de Ponerlo con React */
+.header2{
+    position: fixed;
+    height: 60px;
+}
+
+.header2 .nameCompany{
+    line-height: 60px;
+    font-size: 25px;
+}
+
+.header2 nav{
+    line-height: 60px;
+}
+ 
+.nameCompany{
+    font-size: x-large;
+    padding-left: 60px;
+    margin-left: 0px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    line-height: 200px;
+    float: left;
+}
+
+.text{
+vertical-align: middle;
+}
+
+
+
+
+.wall {
+    background-color: rgb(232, 232,224);
+}
+
+.footer{
+    justify-content: space-between;
+    background-color: rgb(63, 70, 82);
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    color: white;
+
+    padding-top: 15px;
+}
+
+.colorIcon{
+   color: rgb(31, 148, 226);
+}
+
+.loginSection{
+    float: right;
+    text-align: center;
+    border-radius: 1px;
+    color: white;
+   
+
+}
+
+.contenedorImagen{
+    margin-right: 30px;
+    margin-top: 200px;
+    height: 30%;
+    width: 28%;
+    padding-top: 10px;
+    background-color: rgba(24, 88, 131, 0.842);
+    border-radius: 20px;
+
+}
+.sizeIcon{
+    height: 10%;
+    width: 25%;
+    background-color: white;
+    border-radius: 200px;
+    
+    font-size: 40px;
+    padding:20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+.button{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 5px 15px;
+    background-color: black;
+    border-color: blanchedalmond;
+    color: white;
+    
+
+
+}
+  
+.button:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.mainSpace{
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 950px) {
+    header .nameCompany,
+    header nav {
+        width: 100%;
+        text-align:center;
+        line-height:80px;
+    }
+
+    .header2 {
+        height: auto;
+    }
+
+    .header2 .nameCompany,
+    .header2 nav {
+        line-height: 50px;
+    }
+}
+/* Slideeeeer--------------*/
+.slider{
+    margin-left: 50px;
+    padding-top: 150px;
+    width: 600px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 20%;
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
+    
+    
+}
+.slider ul{
+    display: flex;
+    animation: cambio 20s infinite 
+    alternate linear;
+    width: 300%;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    width: 600px;
+    height: 400px;
+}
+@keyframes cambio{
+    0%{margin-left: 0;}
+    20%{margin-left: 0;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+}
