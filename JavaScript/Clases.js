@@ -2,7 +2,6 @@
 
 document.getElementById("boton_abrir").addEventListener("click", abrir_cerrar_menu);
 
-
 // Se ejecutarán las siguientes acciones al hacer clic.
 
 var menu_sidebar = document.getElementById("menu_sidebar");
@@ -15,7 +14,6 @@ function abrir_cerrar_menu() {
     cuerpo.classList.toggle("cuerpo_movimiento");
     menu_sidebar.classList.toggle("menu_sidebar_movimiento");
 }
-
 
 // Si el ancho de la página es menor a 760px, ocultará el menú al recargar la página
 
@@ -43,7 +41,6 @@ window.addEventListener("resize", function(){
 
 });
 
-
 $(".boton_cliente").click(function(e){
     e.preventDefault();
     $("#nombre_cliente").removeAttr("disabled");
@@ -53,15 +50,3 @@ $(".boton_cliente").click(function(e){
 
     $("#registro_cliente").slideDown();
 
-});
-
-registro_cliente;
-
-guardar_cliente; boton
-
-boton_cliente;
-
-agregar_cliente;
-nombre_cliente;
-tel_cliente;
-email_cliente; 
