@@ -355,12 +355,14 @@ th{
     flex-direction: row;
     justify-content: space-around;
     padding-top: 25px;
+    text-align: center;
 }
 
 .inputsActualizar{
-    width: 20%;
+    width: 100%;
     height: 4vh;
     text-align: center;
+    margin: 10px;
 }
 
 .labelInputRegistrar{
