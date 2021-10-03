@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador Productos</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,900|Ubuntu:400,500,700" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style/ProdRegistroStyles.css">
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+
+</head>
+<body id="cuerpo">
+    <header class="header">           
+        <div class="icono_menu">
+            <i class="fas fa-bars" id="boton_abrir"></i>
+        </div>  
+        <div>
+            <div class="nameCompany">
+            <img src="./media/logo.svg" alt="imagen" class ="Logo text"/> Compañía de manufactura
+                </div>
+        
+            <nav>            
+                <div class="aling">
+                <a>Quiénes somos <i class="fas fa-users colorIcon"></i></a>
+                <a>Contáctenos <i class="far fa-envelope colorIcon"></i></a>
+                </div>              
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Sección del Sidebar -->
+    <div class="menu_sidebar" id="menu_sidebar">
+        
+        <section class="menu_principal">
+            <i class="fab fa-buromobelexperte"></i>
+            <h3> Muebles Wood-Art </h3>
+        </section>
+        
+        <section class="opciones_menu">
+            
+            <a href="#" class="seleccionado">
+                <div class="opcion">
+                    <i class="fas fa-home" title="Inicio"></i>
+                    <h4> Menú Principal </h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="opcion">
+                    <i class="fas fa-couch" title="Productos"></i>
+                    <h4> Registrar Productos </h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="opcion">
+                    <i class="fas fa-luggage-cart"></i>
+                    <h4> Gestionar Productos </h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="opcion">
+                    <i class="fas fa-shopping-cart" title="Registrar Venta"></i>
+                    <h4> Registrar Venta </h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="opcion">
+                    <i class="fas fa-clipboard-list" title="Gestionar Venta"></i>
+                    <h4> Gestionar Venta </h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="opcion">
+                    <i class="fas fa-id-card" title="Administrar Usuarios"></i>
+                    <h4> Administrar Usuarios </h4>
+                </div>
+            </a>
+            <a href="#">
+                <div class="opcion">
+                    <i class="fas fa-door-open" title="Salir"></i>
+                    <h4> Salir </h4>
+                </div>
+            </a>
+        </section>
+    </div>
+
+    <main>
+        
+        <h1 class="encabezadoh1">Registro de productos</h1>
+
+
+        <div class="formSeparar">
+            <!--<img src="./media/engranajes.png"/>-->
+            <form class="estilosForm">
+                               
+
+                <div class="estilosRegistrar">
+                    <span>Registrar el producto &nbsp&nbsp&nbsp
+                        <button class="myButton" type="button" onclick="alert('Producto registrado exitosamente.')" onclick="funcUpdate()">Registrar</button>
+                    </span>
+                    
+                    <div class="estilosActualizarCampos">
+                        <div class="labelInputRegistrar">
+                            <label for="IdProd">ID del producto</label>
+                            <input class="inputsActualizar" name ="IdProd" type="text" placeholder="ID del producto (Sólo lectura)" readonly>
+                        </div>
+                        <div class="labelInputRegistrar">
+                            <label for="DescProd">Descripción del producto</label>
+                            <input class="inputsActualizar" name ="DescProd" type="text" placeholder="Registre la descripción del producto">
+                        </div>
+                        <div class="labelInputRegistrar">
+                            <label for="ValUnitProd">Valor unitario del producto</label>
+                            <input class="inputsActualizar" name ="ValUnitProd" type="text" placeholder="Registre el valor unitario del producto">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class = "tableContainer scrollConds">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto ID</th>
+                        <th>Descripción</th>
+                        <th>Valor unitario</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>VZ19990204</td>
+                        <td>Mesa oval Juliana</td>
+                        <td>180900</td>
+                        <td>Registrado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+
+
+        <div class="estiloDivAMaestro">
+            <span>Ir al maestro de productos &nbsp&nbsp&nbsp
+                <a href="Productos_Maestro.html">
+                <button class="myButton" type="button" onclick="funcUpdate()">Ir al maestro</button></a>
+            </span>
+        </div>
+        
+    </main>
+
+    <!-- Llama las funciones de javascript -->
+    <script src="JavaScript/Clases.js"></script>
+
+    <footer class="footer">
+        <div>
+            <center>
+                <span> Copyright © 2021 · Software administrativo | Todos los derechos reservados
+                    <div style="color: rgb(31, 148, 226);">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                </span>
+            </center>
+        </div>
+    </footer>
+</body>
+</html>
