@@ -2,6 +2,17 @@
 body {
     font-family: 'Montserrat';
 }
+th,td{
+background-color: transparent;
+color: #4d4d4d;
+}
+tbody tr:nth-child(odd) {
+    background:transparent;
+}
+
+tr:hover { /* th:hover also if you wish */
+    background:transparent;    
+}
 
 .titlulo {
     padding: 0.5em;
