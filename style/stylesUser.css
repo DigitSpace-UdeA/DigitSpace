@@ -1,28 +1,22 @@
 body {
-    margin: 0px;
     font-family: 'Montserrat';
 }
 
-h1 {
+.titlulo {
     padding: 0.5em;
 }
 
-ul {
-    list-style: none;
-    padding: 0px;
-    margin: 0.5em;
-}
 
-td,
-th {
+.table-element{
     padding: 0.3em 0.8em;
+
 }
 
 input {
     font-family: 'Montserrat';
 }
 
-button {
+.button-gen {
     background-color:cadetblue;
     color: #e5e7e9  ;
     border-radius: 50px;
@@ -30,7 +24,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.button-gen:hover {
     background-color: #ffffff;
     color: cadetblue;
 }
