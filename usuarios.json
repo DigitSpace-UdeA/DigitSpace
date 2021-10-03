@@ -1,0 +1,14 @@
+[
+    {
+        "ID": 1,
+        "Nombre": "Pepito",
+        "Rol": "Admin",
+        "Estado": "Autorizado"
+    },
+    {
+        "ID": 2,
+        "Nombre": "Pablo",
+        "Rol": "Vendedor",
+        "Estado": "Autorizado"
+    }
+]
