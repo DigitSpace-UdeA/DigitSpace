@@ -90,41 +90,45 @@
     <main>
         <section class="tabla-container">
             <article>
-              <div>
-                <form class="FLexBV">
-                  <label class="Flexhijo" for="Buscar venta">
-                    <h4></p>Buscar venta</h4>
-                    <input class="input"
-                      name="nombre"
-                      placeholder="Ingrese número de referencia"
-                    />
-                    <button class="Flexhijo boton" type="submit">Buscar</button>                    
-                    <input class="input"
-                        number="nombre"
-                        placeholder="Valor total"
-                    />
-                    <input class="input"
-                        name="nombre"
-                        placeholder="Fecha de venta"
-                    /> 
-                    <input class="input"
-                        name="nombre"
-                        placeholder="Nombre cliente"
-                    />
-                    <input class="input"
-                        name="nombre"
-                        placeholder="ID cliente"
-                    /> 
-                    <input class="input"
-                        name="nombre"
-                        placeholder="Vendedor"
-                    /> 
-                    <input class="input"
-                        name="nombre"
-                        placeholder="Estado venta"
-                    />                            
+            <div class="formSeparar">
+                <form class="FLexBV estilosForm">
+                    <div class="estilosBuscar">
+                        <label class="Flexhijo" for="Buscar venta">
+                            <h4></p>Buscar venta</h4>
+                            <input class="input"
+                            name="nombre"
+                            placeholder="Ingrese número de referencia"
+                            />
+                            <button class="Flexhijo boton" type="submit">Buscar</button>
+                    </div>
+                    <div class="estilosActualizarCampos">                                   
+                        <input class="input"
+                            number="nombre"
+                            placeholder="Valor total venta"
+                        />
+                        <input class="input"
+                            name="nombre"
+                            placeholder="Fecha de venta"
+                        /> 
+                        <input class="input"
+                            name="nombre"
+                            placeholder="Nombre cliente"
+                        />
+                        <input class="input"
+                            name="nombre"
+                            placeholder="ID cliente"
+                        /> 
+                        <input class="input"
+                            name="nombre"
+                            placeholder="Vendedor"
+                        /> 
+                        <input class="input"
+                            name="nombre"
+                            placeholder="Estado venta"
+                        />
+                    </div>                                              
                 </form>              
-                </div>
+            </div>
               </article>
           </section>
         
@@ -133,121 +137,126 @@
                 <thead>
                     <tr>
                         <th>Producto ID</th>
-                        <th>Descripción</th>
+                        <th>Cantidad</th>
                         <th>Valor unitario</th>
-                        <th>Disponibilidad</th>
+                        <th>Valor total</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>VZ19990204</td>
-                        <td>Mesa Rectangular Marca Eliza</td>
-                        <td>160900</td>
-                        <td>Disponible</td>
+                        <td>2</td>
+                        <td>10000</td>
+                        <td>20000</td>
                     </tr>
                     <tr>
                         <td>VM20040314</td>
-                        <td>Silla redonda Ikea</td>
-                        <td>40500</td>
-                        <td>Disponible</td>
-                    </tr>
-                    <tr>
-                        <td>VZ20150605</td>
-                        <td>Armario doble puerta Maderas S.A.</td>
-                        <td>650000</td>
-                        <td>Agotado</td>
-                    </tr>
+                        <td>1</td>
+                        <td>30000</td>
+                        <td>30000</td>
+                    </tr>                    
                     <tr>
                         <td>VZ20030810</td>
-                        <td>Camarote metálico Kids Game</td>
+                        <td>1</td>
                         <td>290000</td>
                         <td>Agotado</td>
                     </tr>
                     <tr>
                         <td>VC20091205</td>
-                        <td>Aparador Sonatta</td>
-                        <td>150000</td>
-                        <td>Disponible</td>
+                        <td>2</td>
+                        <td>70000</td>
+                        <td>70000</td>
                     </tr>
                     <tr>
-                        <td>VB20210911</td>
-                        <td>Mecedora rústica Buitragos</td>
-                        <td>460000</td>
-                        <td>Agotado</td>
+                        <td>VB28210911</td>
+                        <td>5</td>
+                        <td>5000</td>
+                        <td>25000</td>
                     </tr>
                     <tr>
-                        <td>VP20010603</td>
-                        <td>Mesa de estudio Ikea</td>
-                        <td>420000</td>
-                        <td>Disponible</td>
+                        <td>VB20210612</td>
+                        <td>3</td>
+                        <td>10000</td>
+                        <td>30000</td>
                     </tr>
                     <tr>
-                        <td>VC20020603</td>
-                        <td>Silla para computador Gamers 2000</td>
-                        <td>890000</td>
-                        <td>Disponible</td>
+                        <td>VB20210755</td>
+                        <td>2</td>
+                        <td>10000</td>
+                        <td>20000</td>
                     </tr>
                     <tr>
-                        <td>VC20120803</td>
-                        <td>Mesa de centro Lily</td>
-                        <td>102000</td>
-                        <td>Agotado</td>
+                        <td>VB20210800</td>
+                        <td>2</td>
+                        <td>10000</td>
+                        <td>20000</td>
+                    </tr>                    
+                    <tr>
+                        <td>VB20210912</td>
+                        <td>2</td>
+                        <td>10000</td>
+                        <td>20000</td>
                     </tr>
                     <tr>
-                        <td>VA20016102</td>
-                        <td>Espejo rinconero con cajón Rhinos</td>
-                        <td>190300</td>
-                        <td>Disponible</td>
-                    </tr>
-                    <tr>
-                        <td>VC20009105</td>
-                        <td>Repisa portarretratos Zuckererg</td>
-                        <td>96000</td>
-                        <td>Agotado</td>
-                    </tr>
-                    <tr>
-                        <td>VB20416167</td>
-                        <td>Nochero monocajón Hilltop</td>
-                        <td>78900</td>
-                        <td>Agotado</td>
+                        <td>VB20210921</td>
+                        <td>1</td>
+                        <td>30000</td>
+                        <td>30000</td>
                     </tr>
                     <tr>
                         <td>VN20406987</td>
-                        <td>Baul de tendidos Mariana</td>
-                        <td>750600</td>
-                        <td>Disponible</td>
+                        <td>3</td>
+                        <td>15000</td>
+                        <td>45000</td>
                     </tr>
                     <tr>
                         <td>VS20060910</td>
-                        <td>Estanteria plástica Vivian</td>
-                        <td>65000</td>
-                        <td>Agotado</td>
+                        <td>2</td>
+                        <td>10000</td>
+                        <td>20000</td>
                     </tr>
                     <tr>
                         <td>VP20030909</td>
-                        <td>Mesa de bar Brooklin</td>
-                        <td>260000</td>
-                        <td>Agotado</td>
+                        <td>4</td>
+                        <td>10000</td>
+                        <td>40000</td>
                     </tr>
                     <tr>
-                        <td>VG20070808</td>
-                        <td>Guardarropas El Guarro</td>
-                        <td>1500000</td>
-                        <td>Agotado</td>
+                        <td>VP20040909</td>
+                        <td>7</td>
+                        <td>10000</td>
+                        <td>70000</td>
                     </tr>
                     <tr>
-                        <td>VA20150729</td>
-                        <td>Perchero de entrada Calimex</td>
-                        <td>63000</td>
-                        <td>Agotado</td>
+                        <td>VP20030879</td>
+                        <td>2</td>
+                        <td>20000</td>
+                        <td>40000</td>
                     </tr>
                     <tr>
-                        <td>VC20020603</td>
-                        <td>Biblioteca con vidrios Lapizlazuli</td>
-                        <td>3500000</td>
-                        <td>Disponible</td>
+                        <td>VP18030909</td>
+                        <td>6</td>
+                        <td>3000</td>
+                        <td>18000</td>
                     </tr>
-                          
+                    <tr>
+                        <td>VP20052709</td>
+                        <td>1</td>
+                        <td>10000</td>
+                        <td>10000</td>
+                    </tr>
+                    <tr>
+                        <td>VP20067891</td>
+                        <td>1</td>
+                        <td>45000</td>
+                        <td>45000</td>
+                    </tr>
+                    <tr>
+                        <td>VP20012345</td>
+                        <td>2</td>
+                        <td>17000</td>
+                        <td>34000</td>
+                    </tr>
                 </tbody>
             </table>
         </div> 
