@@ -215,9 +215,10 @@ vertical-align: middle;
 
  /* estilos JK */
 
- .input {
-    margin: 0.5%;
-    width: 50%;
+ .input {     
+    margin: 10px;   
+    width: 200%;
+    height: 20px;
     text-align: center;
 }
 
