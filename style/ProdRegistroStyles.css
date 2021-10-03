@@ -213,53 +213,10 @@ vertical-align: middle;
  }
 
 
- /* estilos JK */
-
- .input {
-    margin: 0.5%;
-    width: 50%;
-    text-align: center;
-}
-
-.boton {
-    font-family: 'Montserrat', sans-serif;
-    margin: 5px;
-    padding: 2px;
-}
-
-.Flexhijo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hijo p {
-    padding: 20px;
-    border: 2px solid #1f94e2;
-}
-
-.tableContainer{
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.scrollConds{
-    overflow: hidden;
-    overflow-y:auto;
-    height: 43vh;
-}
-
-.Flexhijo p {
-    font-size: 20px;
-    display: flex;
-    padding: 5px;
-    font-family: 'Lato', sans-serif;
-}
 
 
-/* estilos Daiel */
+
+/* estilos Daniel */
 
 .tableContainer{
     border-collapse: collapse;
@@ -297,7 +254,12 @@ tr:hover { /* th:hover also if you wish */
     top: 0;
 }
 
-main {
+table{
+    height: 20%;
+    padding-top: 5%;
+}    
+
+main { 
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     flex: auto;
@@ -361,6 +323,15 @@ th{
     padding:10px;
     }
 
+
+.estilosRegistrar{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+}
+    
+
 .selectEstilos{ /*Adicionado Daniel 02-09-2021*/
     padding-left: 15px;
     width: 100vw;
@@ -390,4 +361,16 @@ th{
     width: 20%;
     height: 4vh;
     text-align: center;
+}
+
+.labelInputRegistrar{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+
+.estiloDivAMaestro{
+    font-family: 'Montserrat';
+    padding-left: 20px;
 }
