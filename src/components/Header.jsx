@@ -1,6 +1,6 @@
 import '../style/MainStyles.css';
 
-function Header(){
+const Header = () => {
     return(
       <header className="header">
       <div className="icono_menu">

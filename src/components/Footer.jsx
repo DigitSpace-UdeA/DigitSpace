@@ -1,6 +1,6 @@
 import '../style/MainStyles.css';
 
-function Footer(){
+const Footer = () => {
     return(
       <footer className="footer">
       <div>
