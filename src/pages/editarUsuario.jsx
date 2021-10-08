@@ -1,9 +1,10 @@
 import Layout from "../layouts/layout";
-
+import '../style/stylesUser.css';
 const EditarUsuario = () => {
 
     return (
-        <Layout>
+        <>
+        {/* <Layout> */}
             <h2 class="titlulo">Editar - Modulo de Usuarios y Roles</h2>
 
             <div class="section-edit">
@@ -41,7 +42,8 @@ const EditarUsuario = () => {
                     </button>
                 </form>
             </div>
-        </Layout>
+       {/*  </Layout> */}
+      </>
     );
 
 }

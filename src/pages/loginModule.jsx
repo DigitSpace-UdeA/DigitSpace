@@ -1,19 +1,31 @@
 import Layout from "../layouts/layout";
+import '../style/Estilos_Login.css';
+
+
+import img16 from '../media/Imagen 16.jpg'
+import img17 from '../media/Imagen 17.jpg'
+import img18 from '../media/Imagen 18.jpg'
+import img19 from '../media/Imagen 19.jpg'
+import img20 from '../media/Imagen 20.jpg'
+import img21 from '../media/Imagen 21.jpg'
+import img22 from '../media/Imagen 22.jpg'
+import img23 from '../media/Imagen 23.jpg'
 
 const LoginModule = () => {
     return (
         <>
-            <Layout>
+
+            <div className="main">    
                 <div class="slider">
                     <ul>
-                        <li> <img src="./media/Imagen 16.jpg" alt="1" /></li>
-                        <li> <img src="./media/Imagen 17.jpg" alt="2" /></li>
-                        <li> <img src="./media/Imagen 18.jpg" alt="3" /></li>
-                        <li> <img src="./media/Imagen 19.jpg" alt="4" /></li>
-                        <li> <img src="./media/Imagen 20.jpg" alt="5" /></li>
-                        <li> <img src="./media/Imagen 21.jpg" alt="6" /></li>
-                        <li> <img src="./media/Imagen 22.jpg" alt="7" /></li>
-                        <li> <img src="./media/Imagen 23.jpg" alt="8" /></li>
+                        <li> <img src={img16} alt="1" /></li>
+                        <li> <img src={img17} alt="2" /></li>
+                        <li> <img src={img18} alt="3" /></li>
+                        <li> <img src={img19} alt="4" /></li>
+                        <li> <img src={img20} alt="5" /></li>
+                        <li> <img src={img21} alt="6" /></li>
+                        <li> <img src={img22} alt="7" /></li>
+                        <li> <img src={img23} alt="8" /></li>
 
                     </ul>
                 </div>
@@ -27,7 +39,8 @@ const LoginModule = () => {
                         mail
                     </button> </a>
                 </div>
-            </Layout>
+            </div>    
+
         </>
 
     );

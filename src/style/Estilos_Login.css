@@ -1,19 +1,17 @@
-body{
-    margin: 0px;
-    font-family: 'Montserrat';
-}
+/*
 ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
 }
+*/
 
-main{
+.main{
     display: flex;
     justify-content: space-around;
 }
 
-/*header*/
+/*header
 .Logo{
     height: 60px;
     margin-left: 20px;
@@ -51,7 +49,7 @@ header nav a:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
-
+*/
 /* Acordarse de Ponerlo con React */
 .header2{
     position: fixed;

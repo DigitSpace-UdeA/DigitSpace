@@ -1,9 +1,8 @@
-import Layout from "../layouts/layout";
+import '../style/MainStyles.css';
 
 const RegistroVentas = () => {
     return (
         <>
-            <Layout>
                 <section id="encabezado">
                     <div class="titulo_pagina">
                         <h1><i class="fas fa-cart-arrow-down"></i> Registrar Venta </h1>
@@ -145,7 +144,6 @@ const RegistroVentas = () => {
                     </tfoot>
 
                 </table>
-            </Layout>
         </>
     );
 }

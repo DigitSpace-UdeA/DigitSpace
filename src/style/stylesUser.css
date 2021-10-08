@@ -2,7 +2,7 @@
 body {
     font-family: 'Montserrat';
 }
-th,td{
+.tabla-usuarios  th,td{
 background-color: transparent;
 color: #4d4d4d;
 }

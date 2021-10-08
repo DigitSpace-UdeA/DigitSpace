@@ -1,9 +1,10 @@
 import Layout from "../layouts/layout";
+import '../style/stylesUser.css';
 
 const EliminarUsuario = () => {
 
     return (
-        <Layout>
+        <>
             <h1 class="titlulo">Eliminar - Modulo de Usuarios y Roles</h1>
             <span>¿Esta seguro que desea eliminar el usuario?</span>
             <div class="section-edit">
@@ -30,7 +31,7 @@ const EliminarUsuario = () => {
                     </button>
                 </form>
             </div>
-        </Layout>
+        </>
     );
 }
 

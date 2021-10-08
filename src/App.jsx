@@ -1,5 +1,7 @@
 import logo from './media/logo.svg';
 import './style/App.css';
+import Layout from "./layouts/layout";
+
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -28,38 +30,39 @@ function App() {
     <div className="App">
 
       <Router>
-{/*         <Link to="/">Home</Link>
+        {/*         <Link to="/">Home</Link>
         <Link to="/ModuloUsuarios">Usuarios</Link> */}
-
-        <Switch>
-          <Route path="/ModuloUsuarios" exact>
-            <ModuloUsuarios/>
-          </Route>
-          <Route path="/editarUsuario" exact>
-            <EditarUsuario/>
-          </Route>
-          <Route path="/eliminarUsuario" exact>
-            <EliminarUsuario/>
-          </Route>
-          <Route path="/loginModule" exact>
-            <LoginModule/>
-          </Route>
-          <Route path="/productosMaestro" exact>
-            <ProductosMaestro/>
-          </Route>
-          <Route path="/productosRegistro" exact>
-            <ProductosRegistro/>
-          </Route>
-          <Route path="/registroVentas" exact>
-            <RegistroVentas/>
-          </Route>
-          <Route path="/ventasMaestro" exact>
-            <VentasMaestro/>
-          </Route>
-          <Route path="/" exact>
-            <Main />
-          </Route>
-        </Switch>
+        <Layout>
+          <Switch>
+            <Route path="/ModuloUsuarios" exact>
+              <ModuloUsuarios />
+            </Route>
+            <Route path="/editarUsuario" exact>
+              <EditarUsuario />
+            </Route>
+            <Route path="/eliminarUsuario" exact>
+              <EliminarUsuario />
+            </Route>
+            <Route path="/loginModule" exact>
+              <LoginModule />
+            </Route>
+            <Route path="/productosMaestro" exact>
+              <ProductosMaestro />
+            </Route>
+            <Route path="/productosRegistro" exact>
+              <ProductosRegistro />
+            </Route>
+            <Route path="/registroVentas" exact>
+              <RegistroVentas />
+            </Route>
+            <Route path="/ventasMaestro" exact>
+              <VentasMaestro />
+            </Route>
+            <Route path="/" exact>
+              <Main />
+            </Route>
+          </Switch>
+        </Layout>
       </Router>
     </div>
   );
