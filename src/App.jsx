@@ -28,8 +28,8 @@ function App() {
     <div className="App">
 
       <Router>
-        <Link to="/">Home</Link>
-        <Link to="/ModuloUsuarios">Usuarios</Link>
+{/*         <Link to="/">Home</Link>
+        <Link to="/ModuloUsuarios">Usuarios</Link> */}
 
         <Switch>
           <Route path="/ModuloUsuarios" exact>

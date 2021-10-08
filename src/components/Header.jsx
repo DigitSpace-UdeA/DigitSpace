@@ -1,5 +1,7 @@
 import '../style/MainStyles.css';
 
+import logo from '../media/logo.svg'
+
 const Header = () => {
     return(
       <header className="header">
@@ -9,7 +11,7 @@ const Header = () => {
       <div>
   
         <div className="nameCompany">
-          <img src="./media/logo.svg" alt="imagen" className="Logo text" /> Compañía de manufactura
+          <img src={logo} alt="imagen" className="Logo text" /> Compañía de manufactura
         </div>
   
         <nav>
