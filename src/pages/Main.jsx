@@ -27,7 +27,7 @@ function Main() {
                     <br />
                     Desde ahora compartiremos momentos inolvidables y tendremos éxito asegurado. Tu forma de trabajo sumará
                     muchos puntos positivos al grupo y aprenderemos mucho de tí.
-                </p> <br />
+                </p> <br/>
                 <p>Te deseamos un productivo y feliz día, recuerda que a cada momento nace una nueva oportunidad para poder
                     desempeñarte y crecer a nivel laboral y personal!</p>
 

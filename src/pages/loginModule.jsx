@@ -16,7 +16,7 @@ const LoginModule = () => {
         <>
 
             <div className="main">    
-                <div class="slider">
+                <div className="slider">
                     <ul>
                         <li> <img src={img16} alt="1" /></li>
                         <li> <img src={img17} alt="2" /></li>
@@ -30,12 +30,12 @@ const LoginModule = () => {
                     </ul>
                 </div>
 
-                <div class="loginSection contenedorImagen">
-                    <i class="fas fa-user-clock colorIcon sizeIcon"></i> <br />
+                <div className="loginSection contenedorImagen">
+                    <i className="fas fa-user-clock colorIcon sizeIcon"></i> <br />
                     <span> Ingresa o registrate <br /> con tu cuenta de google </span>
                     <br />
-                    <a href="Main.html"> <button class="button">
-                        <i class="fab fa-google colorIcon"></i>
+                    <a href="Main.html"> <button className="button">
+                        <i className="fab fa-google colorIcon"></i>
                         mail
                     </button> </a>
                 </div>
