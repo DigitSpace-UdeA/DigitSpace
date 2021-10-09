@@ -7,7 +7,9 @@ const Layout = ({children}) => {
         <div>
         <Header/>
         <Sidebar/>
-        <main>{children}</main>
+        <main >{children}</main>
+       {/*  <!-- Llama las funciones de javascript --> */}
+        <script type="text/javascript" src="./JavaScript/Clases.js"></script>
         <Footer/>
         </div>
     );
