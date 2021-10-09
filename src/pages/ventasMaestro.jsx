@@ -3,41 +3,45 @@ import '../style/MainStyles.css';
 const VentasMaestro = () => {
     return (
         <>
-            <section class="tabla-container">
+            <section className="tabla-container">
                 <article>
-                    <div class="formSeparar">
-                        <form class="FLexBV estilosForm">
-                            <div class="estilosBuscar">
-                                <label class="Flexhijo" for="Buscar venta" />
+                    <div className="formSeparar">
+                        <form className="FLexBV estilosForm">
+                            <div className="estilosBuscar">
+                                <label className="Flexhijo" for="Buscar venta" />
                                 <h4>Buscar venta</h4>
-                                <input class="input"
+                                <input className="input" 
                                     name="nombre"
                                     placeholder="Ingrese número de referencia"
                                 />
-                                <button class="Flexhijo boton" type="submit">Buscar</button>
+                                <button className="Flexhijo boton" type="submit">Buscar</button>
+                                <button onclick="boton1" className="Flexhijo boton" type="submit">Actualizar</button>
+                                <script>
+                                    alert ("Se ha actualizado correctamente")
+                                </script>
                             </div>
-                            <div class="estilosActualizarCampos">
-                                <input class="input"
+                            <div className="estilosActualizarCampos">
+                                <input className="input"
                                     number="nombre"
                                     placeholder="Valor total venta"
                                 />
-                                <input class="input"
+                                <input className="input"
                                     name="nombre"
                                     placeholder="Fecha de venta"
                                 />
-                                <input class="input"
+                                <input className="input"
                                     name="nombre"
                                     placeholder="Nombre cliente"
                                 />
-                                <input class="input"
+                                <input className="input"
                                     name="nombre"
                                     placeholder="ID cliente"
                                 />
-                                <input class="input"
+                                <input className="input"
                                     name="nombre"
                                     placeholder="Vendedor"
                                 />
-                                <input class="input"
+                                <input className="input"
                                     name="nombre"
                                     placeholder="Estado venta"
                                 />
@@ -47,7 +51,7 @@ const VentasMaestro = () => {
                 </article>
             </section>
 
-            <div class="tableContainer scrollConds">
+            <div className="tableContainer scrollConds">
                 <table>
                     <thead>
                         <tr>
@@ -73,8 +77,8 @@ const VentasMaestro = () => {
                         <tr>
                             <td>VZ20030810</td>
                             <td>1</td>
-                            <td>290000</td>
-                            <td>Agotado</td>
+                            <td>300000</td>
+                            <td>300000</td>
                         </tr>
                         <tr>
                             <td>VC20091205</td>

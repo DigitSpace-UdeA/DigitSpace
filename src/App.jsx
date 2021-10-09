@@ -1,5 +1,4 @@
 import logo from './media/logo.svg';
-import './style/App.css';
 import Layout from "./layouts/layout";
 
 

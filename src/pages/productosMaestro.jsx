@@ -1,25 +1,25 @@
 
-import '../style/MainStyles.css';
+import '../style/ProdMaestroStyles.css';
 
 const ProductosMaestro = () => {
     return (
         <>
-            <h1 class="encabezadoh1">Maestro de productos</h1>
+            <h1 classNameName="encabezadoh1">Maestro de productos</h1>
 
 
-            <div class="formSeparar">
+            <div className="formSeparar">
                 {/*  <!--<img src="./media/engranajes.png" />--> */}
-                <form class="estilosForm">
-                    <div class="estilosListar">
+                <form className="estilosForm">
+                    <div className="estilosListar">
                         <span>Listar todos los productos </span>
-                        <button class="myButton" type="button" onclick="alert('Productos listados exitosamente.')"
+                        <button className="myButton" type="button" onclick="alert('Productos listados exitosamente.')"
                             onclick="funcListar()">Listar</button>
                     </div>
 
-                    <div class="estilosBuscar">
+                    <div className="estilosBuscar">
                         <span>Buscar el producto</span> {/* &nbsp&nbsp&nbsp */}
-                        <input class="inputsBuscar" name="IdBuscar" type="text" placeholder="Palabra a buscar" />
-                        <div class="selectEstilos">
+                        <input className="inputsBuscar" name="IdBuscar" type="text" placeholder="Palabra a buscar" />
+                        <div className="selectEstilos">
                             <div>
                                 <input type="radio" id="porID" name="busqueda" value="porID" checked />
                                 <label for="porID">Por ID</label>
@@ -31,24 +31,24 @@ const ProductosMaestro = () => {
                         </div>
                     </div>
 
-                    <div class="estilosActualizar">
-                        <span>Actualizar el producto &nbsp&nbsp&nbsp
-                            <button class="myButton" type="button" onclick="alert('Producto actualizado exitosamente.')"
+                    <div className="estilosActualizar">
+                        <span>Actualizar el producto {/* &nbsp&nbsp&nbsp */}
+                            <button className="myButton" type="button" onclick="alert('Producto actualizado exitosamente.')"
                                 onclick="funcUpdate()">Actualizar</button>
                         </span>
 
-                        <div class="estilosActualizarCampos">
+                        <div className="estilosActualizarCampos">
                             {/*  <!--<label for="IdProd">ID del producto</label>--> */}
-                            <input class="inputsActualizar" name="IdProd" type="text" placeholder="ID del producto (Sólo lectura)"
+                            <input className="inputsActualizar" name="IdProd" type="text" placeholder="ID del producto (Sólo lectura)"
                                 readonly />
                             {/* <!--<label for="DescProd">Descripción del producto</label>--> */}
-                            <input class="inputsActualizar" name="DescProd" type="text"
+                            <input className="inputsActualizar" name="DescProd" type="text"
                                 placeholder="Actualice descripción del producto" />
                             {/*  <!--<label for="ValUnitProd">Valor unitario del producto</label>--> */}
-                            <input class="inputsActualizar" name="ValUnitProd" type="text"
+                            <input className="inputsActualizar" name="ValUnitProd" type="text"
                                 placeholder="Actualice valor unitario del producto" />
                             {/*  <!--<label for="DispProd">Disponibilidad del producto</label>-- */}
-                            <input class="inputsActualizar" name="DispProd" type="text"
+                            <input className="inputsActualizar" name="DispProd" type="text"
                                 placeholder="Actualice disponibilidad del producto" />
                         </div>
                     </div>
@@ -57,7 +57,7 @@ const ProductosMaestro = () => {
 
 
 
-            <div class="tableContainer scrollConds">
+            <div className="tableContainer scrollConds">
                 <table>
                     <thead>
                         <tr>
