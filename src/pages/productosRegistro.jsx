@@ -1,5 +1,5 @@
 
-import '../style/MainStyles.css';
+import '../style/ProdRegistroStyles.css';
 
 const ProductosRegistro = () => {
     return (
@@ -13,7 +13,7 @@ const ProductosRegistro = () => {
 
 
                     <div class="estilosRegistrar">
-                        <span>Registrar el producto &nbsp&nbsp&nbsp
+                        <span>Registrar el producto {/* &nbsp&nbsp&nbsp */}
                             <button class="myButton" type="button" onclick="alert('Producto registrado exitosamente.')" onclick="funcUpdate()">Registrar</button>
                         </span>
 
@@ -60,7 +60,7 @@ const ProductosRegistro = () => {
 
 
             <div class="estiloDivAMaestro">
-                <span>Ir al maestro de productos &nbsp&nbsp&nbsp
+                <span>Ir al maestro de productos {/* &nbsp&nbsp&nbsp */}
                     <a href="/productosMaestro">
                         <button class="myButton" type="button" onclick="funcUpdate()">Ir al maestro</button></a>
                 </span>
