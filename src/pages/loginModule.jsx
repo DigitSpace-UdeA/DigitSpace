@@ -1,5 +1,5 @@
-import Layout from "../layouts/layout";
-import '../style/Estilos_Login.css';
+
+import '../style/ZEstilos_Login.css';
 
 
 import img16 from '../media/Imagen 16.jpg'
@@ -15,7 +15,7 @@ const LoginModule = () => {
     return (
         <>
 
-            <div className="main">    
+            <div className="mainLogin " id="idCapa">    
                 <div className="slider">
                     <ul>
                         <li> <img src={img16} alt="1" /></li>
@@ -34,7 +34,7 @@ const LoginModule = () => {
                     <i className="fas fa-user-clock colorIcon sizeIcon"></i> <br />
                     <span> Ingresa o registrate <br /> con tu cuenta de google </span>
                     <br />
-                    <a href="Main.html"> <button className="button">
+                    <a href="Main"> <button className="button">
                         <i className="fab fa-google colorIcon"></i>
                         mail
                     </button> </a>

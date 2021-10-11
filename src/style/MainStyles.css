@@ -15,6 +15,7 @@ body{
     flex-direction: column;
 }
 
+
 main{
     padding: 20px 50px 100px 50px;
 }
@@ -391,4 +392,12 @@ th{
     width: 20%;
     height: 4vh;
     text-align: center;
+}
+.mainSpace{
+    padding-bottom: 20px;
+    
+}
+
+.spaceIcon {
+    padding-right: 5px;
 }

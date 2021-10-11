@@ -5,13 +5,13 @@ const Footer = () => {
       <footer className="footer">
       <div>
         <center>
-          <span> Copyright © 2021 · Software administrativo | Todos los derechos reservados
-            <div >
-              <i className="fab fa-facebook"></i>
-              <i className="fab fa-instagram"></i>
-              <i className="fab fa-youtube"></i>
-              <i className="fab fa-linkedin"></i>
-              <i className="fab fa-twitter"></i>
+          <span className="mainSpace"> Copyright © 2021 · Software administrativo | Todos los derechos reservados
+            <div className="colorIcon ">
+              <i className="fab fa-facebook spaceIcon "></i>
+              <i className="fab fa-instagram spaceIcon"></i>
+              <i className="fab fa-youtube spaceIcon"></i>
+              <i className="fab fa-linkedin spaceIcon"></i>
+              <i className="fab fa-twitter "></i>
             </div>
           </span>
         </center>

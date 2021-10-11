@@ -2,6 +2,7 @@ import logo from './media/logo.svg';
 import Layout from "./layouts/layout";
 
 
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './pages/Main'
@@ -13,7 +14,7 @@ import VentasMaestro from './pages/ventasMaestro';
 import ProductosMaestro from './pages/productosMaestro';
 import ProductosRegistro from './pages/productosRegistro';
 import ModuloUsuarios from './pages/ModuloUsuarios';
-
+import LandingPage from './layouts/landingPage';
 
 import {
   BrowserRouter as Router,
@@ -21,14 +22,14 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import LandingPage from './layouts/landingPage';
+
 
 
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
 
       <Router>
         {/*         <Link to="/">Home</Link>
@@ -70,7 +71,7 @@ function App() {
             <LandingPage>
               <Switch>
                 <Route path="/" exact>
-                  <LoginModule />
+                  <LoginModule/>
                 </Route>
               </Switch>
             </LandingPage>

@@ -1,5 +1,5 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/HeaderLogin';
+import Footer from '../components/FooterLogin';
 
 const LandingPage = ({children}) => {
     return(
