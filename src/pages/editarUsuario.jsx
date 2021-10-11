@@ -1,10 +1,25 @@
-import Layout from "../layouts/layout";
+import React, { useEffect, useState } from 'react';
 import '../style/stylesUser.css';
 const EditarUsuario = () => {
 
+    //Use State
+    const [rol, setRol] = useState('');
+
+    //Use effect
+    useEffect(()=>{
+        console.log("use effect vacio")
+    },[])
+    
+
+    //funcion
+    const enviarDatos = () => {
+        console.log("envio button");
+    }
+
+
     return (
         <>
-        {/* <Layout> */}
+
             <h2 className="titulo">Editar - Modulo de Usuarios y Roles</h2>
             <div className="section-edit">
                 <form action="" className="form-edit">
@@ -21,7 +36,12 @@ const EditarUsuario = () => {
                     <label>
                         <i className="fas fa-briefcase"></i>
                         Rol
-                        <select className="input-edit">
+                        <select onChange={
+                            (e) =>{
+                                console.log(e.target.value)
+                                setRol = e.target.value
+                            }
+                        } className="input-edit">
                             <option>Vendedor</option>
                             <option>Administrador</option>
                         </select>
@@ -34,13 +54,13 @@ const EditarUsuario = () => {
                             <option>No Autorizado</option>
                         </select>
                     </label>
-                    <button className="button-gen btn-submit-edit" type="submit">
+                    <button className="button-gen btn-submit-edit" type="button" onClick={enviarDatos}>
                         <i className="fas fa-save"></i>
                         Guardar
                     </button>
                 </form>
             </div>
-       {/*  </Layout> */}
+
       </>
     );
 
