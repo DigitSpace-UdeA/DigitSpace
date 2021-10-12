@@ -11,8 +11,9 @@ import EditarUsuario from './pages/editarUsuario';
 import LoginModule from './pages/loginModule';
 import EliminarUsuario from './pages/eliminarUsuario';
 import VentasMaestro from './pages/ventasMaestro';
-import ProductosMaestro from './pages/productosMaestro';
-import ProductosRegistro from './pages/productosRegistro';
+//import ProductosMaestro from './pages/productosMaestro';
+//import ProductosRegistro from './pages/productosRegistro';
+import ProdRegMasterFront from './pages/ProdRegMasterFront';
 import ModuloUsuarios from './pages/ModuloUsuarios';
 import LandingPage from './layouts/landingPage';
 
@@ -24,20 +25,26 @@ import {
 } from "react-router-dom";
 
 
-
+import React, { useEffect, useState, useRef } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
+import { nanoid } from 'nanoid';
+//import { obtenerProductos } from 'utils/api';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
   return (
     <div className="">
 
+      
       <Router>
         {/*         <Link to="/">Home</Link>
         <Link to="/ModuloUsuarios">Usuarios</Link> */}
 
         <Switch>
           <Route
-            path={["/ModuloUsuarios", "/editarUsuario", "/eliminarUsuario", "/productosMaestro", "/productosRegistro", "/registroVentas", "/ventasMaestro", "/main"]} exact>
+            path={["/ModuloUsuarios", "/editarUsuario", "/eliminarUsuario", "/productos", "/productosMaestro", "/productosRegistro", "/registroVentas", "/ventasMaestro", "/main"]} exact>
             <Layout>
               <Switch>
                 <Route path="/ModuloUsuarios" exact>
@@ -49,12 +56,15 @@ function App() {
                 <Route path="/eliminarUsuario" exact>
                   <EliminarUsuario />
                 </Route>
-                <Route path="/productosMaestro" exact>
+                <Route path='/productos'>
+                  <ProdRegMasterFront/>
+                </Route>
+                {/*<Route path="/productosMaestro" exact>
                   <ProductosMaestro />
                 </Route>
                 <Route path="/productosRegistro" exact>
                   <ProductosRegistro />
-                </Route>
+                </Route>*/}
                 <Route path="/registroVentas" exact>
                   <RegistroVentas />
                 </Route>
