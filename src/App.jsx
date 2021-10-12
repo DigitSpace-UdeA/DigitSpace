@@ -1,3 +1,7 @@
+import './App.css';
+
+
+
 import logo from './media/logo.svg';
 import Layout from "./layouts/layout";
 
@@ -29,56 +33,9 @@ import {
 
 function App() {
   return (
-    <div className="">
+    <div className='App'>
+      <div className='bg-red-400'> Hola mundo</div>
 
-      <Router>
-        {/*         <Link to="/">Home</Link>
-        <Link to="/ModuloUsuarios">Usuarios</Link> */}
-
-        <Switch>
-          <Route
-            path={["/ModuloUsuarios", "/editarUsuario", "/eliminarUsuario", "/productosMaestro", "/productosRegistro", "/registroVentas", "/ventasMaestro", "/main"]} exact>
-            <Layout>
-              <Switch>
-                <Route path="/ModuloUsuarios" exact>
-                  <ModuloUsuarios />
-                </Route>
-                <Route path="/editarUsuario" exact>
-                  <EditarUsuario />
-                </Route>
-                <Route path="/eliminarUsuario" exact>
-                  <EliminarUsuario />
-                </Route>
-                <Route path="/productosMaestro" exact>
-                  <ProductosMaestro />
-                </Route>
-                <Route path="/productosRegistro" exact>
-                  <ProductosRegistro />
-                </Route>
-                <Route path="/registroVentas" exact>
-                  <RegistroVentas />
-                </Route>
-                <Route path="/ventasMaestro" exact>
-                  <VentasMaestro />
-                </Route>
-                <Route path="/main" exact>
-                  <Main />
-                </Route>
-              </Switch>
-            </Layout>
-          </Route>
-          <Route path={["/"]}>
-            <LandingPage>
-              <Switch>
-                <Route path="/" exact>
-                  <LoginModule/>
-                </Route>
-              </Switch>
-            </LandingPage>
-          </Route>
-        </Switch>
-
-      </Router>
     </div>
   );
 }
