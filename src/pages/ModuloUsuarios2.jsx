@@ -3,8 +3,10 @@ import Pendiente from '../media/Pendiente.svg'
 import autorizado from '../media/autorizado.svg'
 import no_aut from '../media/no_Autorizado.svg'
 
-function ModuloUsuarios() {
-  return (
+const ModuloUsuarios = () => {
+  //return (
+
+    const TablaUsuarios = () =>{
     <div className= 'flex flex-col items-center justify-center'>
         <h2 className = 'text-2xl font-extrabold text-gray-800'> Modulo de usuarios y roles</h2>
         <table>
@@ -23,28 +25,37 @@ function ModuloUsuarios() {
                     <td>Mark</td>
                     <td>Vendedor</td>
                     <td>Autorizado</td>
-                    <tr>
-                    <div className = 'flex'>
-                    <td>
-                    <a href="editarUsuario">
+                    <tr><div className = 'flex'>
+                    <td><a href="editarUsuario">
                         <button title="Editar" type="button" className=" button-gen btn-opcion">
                         <i className="fas fa-edit"></i>
-                        </button>
-                    </a>
-                    </td> 
-                    <td>
-                    <a href="eliminarUsuario">
+                        </button></a></td> 
+                    <td><a href="eliminarUsuario">
                         <button title="Eliminar" type="button" className="button-gen btn-opcion">
                         <i className="fas fa-trash-alt"></i>
                         </button>
-                    </a> 
-                    </td>  
-                    </div>
-                    </tr>
+                    </a></td></div></tr>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Vendedor</td>
+                    <td>Autorizado</td>
+                    <tr><div className = 'flex'>
+                    <td><a href="editarUsuario">
+                        <button title="Editar" type="button" className=" button-gen btn-opcion">
+                        <i className="fas fa-edit"></i>
+                        </button></a></td> 
+                    <td><a href="eliminarUsuario">
+                        <button title="Eliminar" type="button" className="button-gen btn-opcion">
+                        <i className="fas fa-trash-alt"></i>
+                        </button>
+                    </a></td></div></tr>
                 </tr>
             </tbody>
         </table>
     </div>
+    };
 
 
 
@@ -53,6 +64,6 @@ function ModuloUsuarios() {
 
 
 
-);}
+};
 
 export default ModuloUsuarios;
