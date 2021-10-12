@@ -33,6 +33,7 @@ const ModuloUsuarios = ({ listaUsuarios }) => {
 
     /* const [estado, setEstado] = useState("") */
 
+    //Effect, estar pendiente de una variable y ejecutar acciones cuando esta cambie
     useEffect(() => {
         // traer informacion de bk. Obtener lista de usuarios. variable vacia se ejecuta la primera vez del render
         setUsuarios(usuariosBD)
