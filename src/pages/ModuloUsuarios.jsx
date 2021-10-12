@@ -33,7 +33,7 @@ function ModuloUsuarios() {
                                 <img title="Pendiente" src={Pendiente} alt="imagen" className="icon-eliminar" />
                             </td>
                             <td className="table-element">
-                                <a href="./editarUsuario.html">
+                                <a href="editarUsuario">
                                     <button title="Editar" type="button" className=" button-gen btn-opcion">
 
                                         <i className="fas fa-edit"></i>
@@ -41,7 +41,7 @@ function ModuloUsuarios() {
                                 </a>
                             </td>
                             <td className="table-element">
-                                <a href="./eliminarUsuario.html">
+                                <a href="eliminarUsuario">
                                     <button title="Eliminar" type="button" className="button-gen btn-opcion">
                                         <i className="fas fa-trash-alt"></i>
                                     </button>

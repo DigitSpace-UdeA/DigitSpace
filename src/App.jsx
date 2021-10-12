@@ -9,6 +9,7 @@ import VentasMaestro from './pages/ventasMaestro';
 import ProductosMaestro from './pages/productosMaestro';
 import ProductosRegistro from './pages/productosRegistro';
 import ModuloUsuarios from './pages/ModuloUsuarios';
+import ModuloUsuarios2 from './pages/ModuloUsuarios2';
 import LandingPage from './layouts/landingPage';
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
@@ -20,11 +21,14 @@ function App() {
       <Router>
         {/* <Link to="/">Home</Link> <Link to="/ModuloUsuarios">Usuarios</Link> */}
         <Switch>
-          <Route path={["/ModuloUsuarios", "/editarUsuario", "/eliminarUsuario", "/productosMaestro", "/productosRegistro", "/registroVentas", "/ventasMaestro", "/main"]} exact>
+          <Route path={["/ModuloUsuarios", "/ModuloUsuarios2","/editarUsuario", "/eliminarUsuario", "/productosMaestro", "/productosRegistro", "/registroVentas", "/ventasMaestro", "/main"]} exact>
             <Layout>
               <Switch>
                 <Route path="/ModuloUsuarios" exact>
                   <ModuloUsuarios />
+                </Route>
+                <Route path="/ModuloUsuarios2" exact>
+                  <ModuloUsuarios2 />
                 </Route>
                 <Route path="/editarUsuario" exact>
                   <EditarUsuario />
