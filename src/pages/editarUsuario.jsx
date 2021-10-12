@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import '../style/stylesUser.css';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -27,6 +27,11 @@ const EditarUsuario = () => {
     const [rol, setRol] = useState();
     const [estado, setEstado] = useState();
 
+    const submitForm = (e) =>{
+        console.log('datos form env')
+
+    }
+
 
 
     return (
@@ -34,7 +39,7 @@ const EditarUsuario = () => {
 
             <h2 className="titulo">Editar - Modulo de Usuarios y Roles</h2>
             <div className="section-edit">
-                <form action="" className="form-edit">
+                <form onSubmit={submitForm} action="" className="form-edit">
                     <label htmlFor='ID' >
                         <i className="fas fa-id-card"></i>
                         ID
@@ -80,7 +85,7 @@ const EditarUsuario = () => {
                             <option>No Autorizado</option>
                         </select>
                     </label>
-                    <button className="button-gen btn-submit-edit" type="button"
+                    <button className="button-gen btn-submit-edit" type="submit"
                         onClick={enviarDatos}>
                         <i className="fas fa-save"></i>
                         Guardar
@@ -89,14 +94,8 @@ const EditarUsuario = () => {
             </div>
             <ToastContainer
                 position="button-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
+                autoClose={3000}
                 closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
             />
 
         </div>
