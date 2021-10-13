@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from axios;
+import axios from "axios";
 
 
 import '../style/stylesUser.css';
@@ -8,6 +8,7 @@ import '../style/stylesUser.css';
 import Pendiente from '../media/Pendiente.svg'
 import autorizado from '../media/autorizado.svg'
 import no_aut from '../media/no_Autorizado.svg'
+import { Link } from 'react-router-dom';
 
 const ModuloUsuarios = ({ listaUsuarios }) => {
 
@@ -69,19 +70,19 @@ const ModuloUsuarios = ({ listaUsuarios }) => {
                                         {/* <img title="Pendiente" src={Pendiente} alt="imagen" className="icon-eliminar" /> */}
                                     </td>
                                     <td className="table-element">
-                                        <a href="./editarUsuario.html">
+                                    <Link to='/editarUsuario'>
                                             <button title="Editar" type="button" className=" button-gen btn-opcion">
 
                                                 <i className="fas fa-edit"></i>
                                             </button>
-                                        </a>
+                                            </Link>
                                     </td>
                                     <td className="table-element">
-                                        <a href="./eliminarUsuario.html">
+                                        <Link to='/eliminarUsuario'>
                                             <button title="Eliminar" type="button" className="button-gen btn-opcion">
                                                 <i className="fas fa-trash-alt"></i>
                                             </button>
-                                        </a>
+                                        </Link>
                                     </td>
                                 </tr>
                             )
