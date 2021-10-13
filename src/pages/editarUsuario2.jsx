@@ -1,39 +1,28 @@
+import React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import '../style/stylesUser.css';
-import usuario from './ModuloUsuarios2';
-import ModuloUsuariosBackend from './ModuloUsuarios2';
+import moduloUsuarios2 from './ModuloUsuarios2';
+//import ModuloUsuariosBackend from './ModuloUsuarios2';
 
-const EditarUsuario = () => {
-  
-    const [usuarioActual, setUsuarioActual] = useState({
-        ID: '', Usuario: '', Rol: ' ', Estado: '' 
-    });
     
-    const editRow = (usuario) => {
-        setUsuarioActual({
-            ID: usuario.id, 
-            Usuario: usuario.Usuario, 
-            Rol: usuario.Rol,
-            Estado: usuario.Estado
-        })
-    };
-
-    const {resgiter} = useForm({
-        defaultValues: usuarioActual
-    });
+const formEdit = () =>{
+        
+    //const {} = useForm({
+     //   defaultValues: usuarioActual
+    //});
 
     return (
-        <>
-
+        <div>
             <h2 className="titulo">Editar - Modulo de Usuarios y Roles</h2>
             <div className="section-edit">
-                <form className="form-edit" usuarioActual ={usuarioActual} >
+                <form className="form-edit" >
                     <label>
                         <i className="fas fa-id-card"></i>
                         ID
                         <input className="input-edit" type="text" name="ID"
-                        ref={({
+                        ref=
+                        {({
                             required: {value: true, message: 'Campo requerido'}}
                         )}/>
                     </label>
@@ -66,10 +55,34 @@ const EditarUsuario = () => {
                 </form>
             </div>
 
-      </>
-    );
+        </div>
+    )}
 
-}
+
+const EditarUsuario = () => {
+  
+    const [usuarioActual, setUsuarioActual] = useState({
+        ID: '', Usuario: ''
+        , Rol: ' ', Estado: '' 
+    });
+    
+    const editRow = (usuario) => {
+        setUsuarioActual({
+            ID: usuario.id, 
+            Usuario: usuario.Usuario, 
+            Rol: usuario.Rol,
+            Estado: usuario.Estado
+        })
+    };
+
+
+
+
+
+    return (
+        formEdit()
+
+    )};
 
 
 
