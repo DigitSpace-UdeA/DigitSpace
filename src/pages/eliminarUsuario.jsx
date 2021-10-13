@@ -11,19 +11,19 @@ const EliminarUsuario = () => {
                 <form action="" className="form-edit">
                     <label className="label-delete">
                         ID
-                        <input className="input-delete" type="text" value="1" id="id-user" readonly="readonly" />
+                        <input className="input-delete" type="text" value="1" id="id-user" readOnly="readOnly" />
                     </label>
                     <label className="label-delete">
                         Usuario
-                        <input className="input-delete" type="text" value="Mark" id="Name-user" readonly="readonly" />
+                        <input className="input-delete" type="text" value="Mark" id="Name-user" readOnly="readOnly" />
                     </label>
                     <label className="label-delete">
                         Rol
-                        <input className="input-delete" type="text" value="Vendedor" id="Name-user" readonly="readonly" />
+                        <input className="input-delete" type="text" value="Vendedor" id="Name-user" readOnly="readOnly" />
                     </label>
                     <label className="label-delete">
                         Estado
-                        <input className="input-delete" type="text" value="Autorizado" id="Name-user" readonly="readonly" />
+                        <input className="input-delete" type="text" value="Autorizado" id="Name-user" readOnly="readOnly" />
                     </label>
                     <button className="button-gen btn-submit-edit" type="submit">
                         <i className="fas fa-trash-alt"></i>

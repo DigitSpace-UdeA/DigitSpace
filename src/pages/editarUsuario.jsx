@@ -53,7 +53,7 @@ const EditarUsuario = () => {
                     <label htmlFor='ID' >
                         <i className="fas fa-id-card"></i>
                         ID
-                        <input name='id' className="input-edit" type="text" id="id-user" requiered
+                        <input name='id' className="input-edit" type="text" id="id-user" 
                         />
                     </label>
                     <label htmlFor='nombre'>

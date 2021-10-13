@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from "axios";
 
 
@@ -9,6 +10,7 @@ import Pendiente from '../media/Pendiente.svg'
 import autorizado from '../media/autorizado.svg'
 import no_aut from '../media/no_Autorizado.svg'
 import { Link } from 'react-router-dom';
+import { nanoid } from 'nanoid';
 
 const ModuloUsuarios = ({ listaUsuarios }) => {
 
@@ -43,6 +45,14 @@ const ModuloUsuarios = ({ listaUsuarios }) => {
 
     listaUsuarios = usuarios;
 
+
+    ///****** Para las rutas activas
+
+    const location = useLocation();
+    useEffect(() => {
+        console.log(location)
+    }, [location]);
+
     return (
         <div >
             <h1 className="titlulo">Modulo de Usuarios y Roles</h1>
@@ -54,28 +64,28 @@ const ModuloUsuarios = ({ listaUsuarios }) => {
                             <th className="table-element" scope="col">Usuario</th>
                             <th className="table-element" scope="col">Rol</th>
                             <th className="table-element" scope="col">Estado</th>
-                            <th className="table-element" scope="col" colspan="2">Opciones</th>
+                            <th className="table-element" scope="col" colSpan="2">Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         {/* .map le paso un array en tipo JSON y devuelve un array de htlm */}
                         {listaUsuarios.map((usuario) => {
                             return (
-                                <tr>
+                                <tr key={nanoid()}>
                                     {/* <th className="table-element" scope="row">1</th> */}
                                     <td className="table-element" >{usuario.nombre}</td>
                                     <td className="table-element" >{usuario.rol}</td>
                                     <td className="table-element" >
-                                    {usuario.estado}
+                                        {usuario.estado}
                                         {/* <img title="Pendiente" src={Pendiente} alt="imagen" className="icon-eliminar" /> */}
                                     </td>
                                     <td className="table-element">
-                                    <Link to='/editarUsuario'>
+                                        <Link to='/editarUsuario'>
                                             <button title="Editar" type="button" className=" button-gen btn-opcion">
 
                                                 <i className="fas fa-edit"></i>
                                             </button>
-                                            </Link>
+                                        </Link>
                                     </td>
                                     <td className="table-element">
                                         <Link to='/eliminarUsuario'>
