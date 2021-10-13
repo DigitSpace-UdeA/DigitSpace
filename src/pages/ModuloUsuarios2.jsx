@@ -4,6 +4,7 @@ import Pendiente from '../media/Pendiente.svg'
 import autorizado from '../media/autorizado.svg'
 import no_aut from '../media/no_Autorizado.svg'
 import { nanoid } from 'nanoid';
+import editRow from './editarUsuario2';
 
 
 
@@ -25,7 +26,7 @@ const ModuloUsuarios = () => {
         {
             ID: 3,
             Usuario: "Mark",
-            Rol: "Vendedor",
+            Rol: "Administrador",
             Estado: "Autorizado",
         }
     ];
@@ -56,15 +57,17 @@ const ModuloUsuarios = () => {
         <tbody>
             {listaModuloUsuarios.map((usuario) => {
                 return (
-                    <tr key={usuario.id}>
+                    <tr key={nanoid()}>
                     <td>{usuario.ID}</td>
                     <td>{usuario.Usuario}</td>
                     <td>{usuario.Rol}</td>
                     <td>{usuario.Estado}</td>
                     <td>
                     <div className = 'flex w-full justify-around'>
-                        <a href="editarUsuario">
-                        <button title="Editar" type="button" className=" button-gen btn-opcion " onClick={ () => handleActua(usuario) }>
+                        <a href="editarUsuario2">
+                        <button title="Editar" type="button" className=" button-gen btn-opcion " onClick={
+                            () => {editRow (usuario)}
+                        } >
                         <i className="fas fa-edit"></i>
                         </button></a>
                         <a href="eliminarUsuario">
