@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Pendiente from '../media/Pendiente.svg'
 import autorizado from '../media/autorizado.svg'
 import no_aut from '../media/no_Autorizado.svg'
+import { nanoid } from 'nanoid';
 
 
 
@@ -34,8 +35,12 @@ const ModuloUsuarios = () => {
         //obtener lista desde el front
         setlistaModuloUsuarios(ModuloUsuariosBackend)
     }, []);
+
+   
     
     return (
+
+
     <div className= 'flex flex-col items-center justify-center'>
         <h2 className = 'text-2xl font-extrabold text-gray-800'> Modulo de ModuloUsuarios y roles</h2>
         <table>
@@ -51,7 +56,7 @@ const ModuloUsuarios = () => {
         <tbody>
             {listaModuloUsuarios.map((usuario) => {
                 return (
-                    <tr>
+                    <tr key={usuario.id}>
                     <td>{usuario.ID}</td>
                     <td>{usuario.Usuario}</td>
                     <td>{usuario.Rol}</td>
@@ -59,7 +64,7 @@ const ModuloUsuarios = () => {
                     <td>
                     <div className = 'flex w-full justify-around'>
                         <a href="editarUsuario">
-                        <button title="Editar" type="button" className=" button-gen btn-opcion">
+                        <button title="Editar" type="button" className=" button-gen btn-opcion " onClick={ () => handleActua(usuario) }>
                         <i className="fas fa-edit"></i>
                         </button></a>
                         <a href="eliminarUsuario">
@@ -79,5 +84,6 @@ const ModuloUsuarios = () => {
 
 
 
-
 export default ModuloUsuarios;
+
+

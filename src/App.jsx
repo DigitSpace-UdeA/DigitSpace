@@ -3,6 +3,7 @@ import Layout from "./layouts/layout";
 import Main from './pages/Main'
 import RegistroVentas from './pages/registroVentas';
 import EditarUsuario from './pages/editarUsuario';
+import EditarUsuario2 from './pages/editarUsuario2';
 import LoginModule from './pages/loginModule';
 import EliminarUsuario from './pages/eliminarUsuario';
 import VentasMaestro from './pages/ventasMaestro';
@@ -21,7 +22,7 @@ function App() {
       <Router>
         {/* <Link to="/">Home</Link> <Link to="/ModuloUsuarios">Usuarios</Link> */}
         <Switch>
-          <Route path={["/ModuloUsuarios", "/ModuloUsuarios2","/editarUsuario", "/eliminarUsuario", "/productosMaestro", "/productosRegistro", "/registroVentas", "/ventasMaestro", "/main"]} exact>
+          <Route path={["/ModuloUsuarios", "/ModuloUsuarios2","/editarUsuario", "/editarUsuario2", "/eliminarUsuario", "/productosMaestro", "/productosRegistro", "/registroVentas", "/ventasMaestro", "/main"]} exact>
             <Layout>
               <Switch>
                 <Route path="/ModuloUsuarios" exact>
@@ -32,6 +33,9 @@ function App() {
                 </Route>
                 <Route path="/editarUsuario" exact>
                   <EditarUsuario />
+                </Route>
+                <Route path="/editarUsuario2" exact>
+                  <EditarUsuario2 />
                 </Route>
                 <Route path="/eliminarUsuario" exact>
                   <EliminarUsuario />
