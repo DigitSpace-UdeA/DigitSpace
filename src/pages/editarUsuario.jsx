@@ -27,44 +27,47 @@ const EditarUsuario = () => {
     const [rol, setRol] = useState();
     const [estado, setEstado] = useState();
 
+    ///// Usando UseRef
+
+    const form = useRef(null);
+
     const submitForm = (e) =>{
-        console.log('datos form env')
+        e.preventDefault();
 
+        const fd = new FormData(form.current);
+        console.log('datos form env', fd )
+
+        const nuevoUsuario = {};
+        fd.forEach( (value, key) => {
+            nuevoUsuario[key] = value;
+        })
+        console.log(nuevoUsuario)
     }
-
-
 
     return (
         <div>
 
             <h2 className="titulo">Editar - Modulo de Usuarios y Roles</h2>
             <div className="section-edit">
-                <form onSubmit={submitForm} action="" className="form-edit">
+                <form ref={form} onSubmit={submitForm}  className="form-edit">
                     <label htmlFor='ID' >
                         <i className="fas fa-id-card"></i>
                         ID
-                        <input name='id' className="input-edit" type="text" id="id-user"
-                            value={ID}
+                        <input name='id' className="input-edit" type="text" id="id-user" requiered
                         />
                     </label>
                     <label htmlFor='nombre'>
                         <i className="fas fa-user-tie"></i>
                         Usuario
                         <input name='nombre' className="input-edit" type="text" id="Name-user"
-                            value={nombre}
-                            onChange={(e) => {
-                                setNombre(e.target.value)
-                            }}
+
                         />
                     </label>
                     <label htmlFor='rol'>
                         <i className="fas fa-briefcase"></i>
                         Rol
                         <select className="input-edit" name='rol'
-                            value={rol}
-                            onChange={(e) => {
-                                setRol(e.target.value)
-                            }}
+
                         >
                             <option disabled >Seleccione una Opción</option>
                             <option>Vendedor</option>
@@ -75,18 +78,14 @@ const EditarUsuario = () => {
                         <i className="fas fa-unlock-alt"></i>
                         Estado
                         <select className="input-edit" name='estado'
-                            value={estado}
-                            onChange={(e) => {
-                                setEstado(e.target.value)
-                            }}
+
                         >
                             <option disabled >Seleccione una Opción</option>
                             <option>Autorizado</option>
                             <option>No Autorizado</option>
                         </select>
                     </label>
-                    <button className="button-gen btn-submit-edit" type="submit"
-                        onClick={enviarDatos}>
+                    <button className="button-gen btn-submit-edit" type="submit">
                         <i className="fas fa-save"></i>
                         Guardar
                     </button>
