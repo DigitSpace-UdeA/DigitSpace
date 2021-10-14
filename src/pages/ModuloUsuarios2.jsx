@@ -5,28 +5,32 @@ import autorizado from '../media/autorizado.svg'
 import no_aut from '../media/no_Autorizado.svg'
 import { nanoid } from 'nanoid';
 import editRow from './editarUsuario2';
-
+import axios, { Axios } from 'axios';
+import {obtenerUsuarios} from '../utils/api'
 
 const ModuloUsuarios = () => {
 
+  
+
+
     const ModuloUsuariosBackend = [
         {
-            ID: 1,
-            Usuario: "Mark",
-            Rol: "Vendedor",
-            Estado: "Autorizado",
+            
+            usuario: "Mark",
+            rol: "Vendedor",
+            estado: "Autorizado",
         },
         {
-            ID: 2,
-            Usuario: "Mark",
-            Rol: "Vendedor",
-            Estado: "Autorizado",
+            
+            usuario: "Mark",
+            rol: "Vendedor",
+            estado: "Autorizado",
         },
         {
-            ID: 3,
-            Usuario: "Mark",
-            Rol: "Administrador",
-            Estado: "Autorizado",
+            
+            usuario: "Mark",
+            rol: "Administrador",
+            estado: "Autorizado",
         }
     ];
 
@@ -38,6 +42,14 @@ const ModuloUsuarios = () => {
     }, []);
 
    
+    useEffect(() => {
+        // traer informacion de bk. Obtener lista de usuarios. variable vacia se ejecuta la primera vez del render
+        //AXIOS
+        obtenerUsuarios(setlistaModuloUsuarios)
+
+    }, [])
+
+
     const tablaUsuarios = () => {
         return(
 
@@ -47,7 +59,7 @@ const ModuloUsuarios = () => {
     <table editRow = {editRow}>
     <thead>
         <tr>
-        <th>ID</th>
+        
         <th>Usuario</th>
         <th>Rol</th>
         <th>Estado</th>
@@ -55,19 +67,19 @@ const ModuloUsuarios = () => {
         </tr>
     </thead>
     <tbody>
-        {listaModuloUsuarios.map((usuario) => {
+        {listaModuloUsuarios.map((Usuario) => {
             return (
                 <tr key={nanoid()}>
-                <td>{usuario.ID}</td>
-                <td>{usuario.Usuario}</td>
-                <td>{usuario.Rol}</td>
-                <td>{usuario.Estado}</td>
+                
+                <td>{Usuario.usuario}</td>
+                <td>{Usuario.rol}</td>
+                <td>{Usuario.estado}</td>
                 <td>
                 <div className = 'flex w-full justify-around'>
                     <a href="editarUsuario2">
                     <button title="Editar" type="button" className=" button-gen btn-opcion " 
                     onClick={
-                        () => {editRow (usuario)}
+                        () => {editRow (Usuario)}
                     } >
                     <i className="fas fa-edit"></i>
                     </button></a>
