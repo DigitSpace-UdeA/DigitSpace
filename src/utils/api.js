@@ -1,12 +1,16 @@
 
 import axios from "axios";
-
-export const obtenerUsuarios = async (setlistaModuloUsuarios) => {
-    const options = { method: 'GET', url: 'http://localhost:5000/usuarios' };
-
-    axios.request(options).then(function (response) {
-        setlistaModuloUsuarios(response.data)
-    }).catch(function (error) {
-        console.error(error);
+export const obtenerUsuarios = async (setUsuarios) => {
+    const options = { 
+    method: 'GET', 
+    url: 'http://localhost:5000/moduloUsuarios2' };
+    
+    axios.
+    request(options).
+    then(function (response) {
+    setUsuarios(response.data)
+    })
+    .catch(function (error) {
+    console.error(error);
     });
 }
