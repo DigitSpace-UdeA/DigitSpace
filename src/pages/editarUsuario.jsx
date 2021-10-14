@@ -1,17 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import '../style/stylesUser.css';
+import ModuloUsuarios from './ModuloUsuarios';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const EditarUsuario = () => {
+const EditarUsuario = (user) => {
 
     //Use State
     /*  const [rol, setRol] = useState(''); */
 
     //Use effect
     useEffect(() => {
-        console.log("use effect vacio")
+        console.log("use effec vacio", user.nombre)
     }, [])
 
 
@@ -27,7 +28,7 @@ const EditarUsuario = () => {
     const [rol, setRol] = useState();
     const [estado, setEstado] = useState();
 
-    ///// Usando UseRef
+    ///// Usando UseRef -> recomendado
 
     const form = useRef(null);
 
@@ -50,12 +51,12 @@ const EditarUsuario = () => {
             <h2 className="titulo">Editar - Modulo de Usuarios y Roles</h2>
             <div className="section-edit">
                 <form ref={form} onSubmit={submitForm}  className="form-edit">
-                    <label htmlFor='ID' >
+{/*                     <label htmlFor='ID' >
                         <i className="fas fa-id-card"></i>
                         ID
                         <input name='id' className="input-edit" type="text" id="id-user" 
                         />
-                    </label>
+                    </label> */}
                     <label htmlFor='nombre'>
                         <i className="fas fa-user-tie"></i>
                         Usuario
@@ -85,7 +86,7 @@ const EditarUsuario = () => {
                             <option>No Autorizado</option>
                         </select>
                     </label>
-                    <button className="button-gen btn-submit-edit" type="submit">
+                    <button  className="button-gen btn-submit-edit" type="submit">
                         <i className="fas fa-save"></i>
                         Guardar
                     </button>

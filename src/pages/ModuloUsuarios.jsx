@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from "axios";
-
-
+import EditarUsuario from './editarUsuario';
 import '../style/stylesUser.css';
-
+import { Link } from 'react-router-dom';
+import { nanoid } from 'nanoid';
+import {obtenerUsuarios} from '../utils/api'
 
 import Pendiente from '../media/Pendiente.svg'
 import autorizado from '../media/autorizado.svg'
 import no_aut from '../media/no_Autorizado.svg'
-import { Link } from 'react-router-dom';
-import { nanoid } from 'nanoid';
 
 const ModuloUsuarios = ({ listaUsuarios }) => {
 
@@ -35,17 +34,16 @@ const ModuloUsuarios = ({ listaUsuarios }) => {
     // Estado
     const [usuarios, setUsuarios] = useState([])
 
-    /* const [estado, setEstado] = useState("") */
-
     //Effect, estar pendiente de una variable y ejecutar acciones cuando esta cambie
     useEffect(() => {
         // traer informacion de bk. Obtener lista de usuarios. variable vacia se ejecuta la primera vez del render
-        setUsuarios(usuariosBD)
+        //AXIOS
+        obtenerUsuarios(setUsuarios)
+
     }, [])
 
     listaUsuarios = usuarios;
-
-
+    
     ///****** Para las rutas activas
 
     const location = useLocation();
@@ -73,14 +71,14 @@ const ModuloUsuarios = ({ listaUsuarios }) => {
                             return (
                                 <tr key={nanoid()}>
                                     {/* <th className="table-element" scope="row">1</th> */}
-                                    <td className="table-element" >{usuario.nombre}</td>
+                                    <td className="table-element" >{usuario.usuario}</td>
                                     <td className="table-element" >{usuario.rol}</td>
                                     <td className="table-element" >
                                         {usuario.estado}
                                         {/* <img title="Pendiente" src={Pendiente} alt="imagen" className="icon-eliminar" /> */}
                                     </td>
                                     <td className="table-element">
-                                        <Link to='/editarUsuario'>
+                                        <Link to='/editarUsuario'  >
                                             <button title="Editar" type="button" className=" button-gen btn-opcion">
 
                                                 <i className="fas fa-edit"></i>
