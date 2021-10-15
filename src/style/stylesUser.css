@@ -2,17 +2,43 @@
 /*body {
     font-family: 'Montserrat';
 }*/
+
+.input-edit-Form {
+    border: solid 2px #ccc;
+    border-radius: 4px;
+    outline: none;
+    padding: 0.4em 0em;
+
+}
+
+.input-edit-Form:focus {
+    border-color: cadetblue;
+}
+
+.btn-opcioncheck {
+    border-radius: 10%;
+    background-color: transparent;
+    padding-top: 3px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
 .tabla-usuarios  th,td{
 background-color: transparent;
 color: #4d4d4d;
 }
-tbody tr:nth-child(odd) {
-    background:transparent;
+
+tr:hover { /*th:hover also if you wish */
+    background: transparent;
+    color: white;    
 }
 
-tr:hover { /* th:hover also if you wish */
-    background:transparent;    
+tbody tr:nth-child(odd) {
+    background:rgb(232, 232,224);
 }
+
+
 
 .titulo {
     padding: 0.5em;
@@ -119,13 +145,7 @@ span{
     font-size: 1.1em;
 }
 
-.btn-opcioncheck {
-    border-radius: 10%;
-    background-color: transparent;
-    padding-top: 3px;
-    font-size: 1.5em;
-    cursor: pointer;
-}
+
 
 
 
@@ -173,17 +193,7 @@ label {
     border-color: cadetblue;
 }
 
-.input-editForm {
-    border: solid 2px #ccc;
-    border-radius: 4px;
-    outline: none;
-    padding: 0.4em 0em;
 
-}
-
-.input-editForm:focus {
-    border-color: cadetblue;
-}
 
 
 .btn-submit-edit {

@@ -2,17 +2,12 @@ import './App.css';
 import Layout from "./layouts/layout";
 import Main from './pages/Main'
 import RegistroVentas from './pages/registroVentas';
-import EditarUsuario from './pages/editarUsuario';
-import EditarUsuario2 from './pages/editarUsuario2';
 import LoginModule from './pages/loginModule';
-import EliminarUsuario from './pages/eliminarUsuario';
 import VentasMaestro from './pages/ventasMaestro';
 import ProductosMaestro from './pages/productosMaestro';
 import ProductosRegistro from './pages/productosRegistro';
-import ModuloUsuarios from './pages/ModuloUsuarios';
 import ModuloUsuarios2 from './pages/ModuloUsuarios2';
 import LandingPage from './layouts/landingPage';
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
@@ -25,20 +20,8 @@ function App() {
           <Route path={["/ModuloUsuarios", "/ModuloUsuarios2","/editarUsuario", "/editarUsuario2", "/eliminarUsuario", "/productosMaestro", "/productosRegistro", "/registroVentas", "/ventasMaestro", "/main"]} exact>
             <Layout>
               <Switch>
-                <Route path="/ModuloUsuarios" exact>
-                  <ModuloUsuarios />
-                </Route>
                 <Route path="/ModuloUsuarios2" exact>
                   <ModuloUsuarios2 />
-                </Route>
-                <Route path="/editarUsuario" exact>
-                  <EditarUsuario />
-                </Route>
-                <Route path="/editarUsuario2" exact>
-                  <EditarUsuario2 />
-                </Route>
-                <Route path="/eliminarUsuario" exact>
-                  <EliminarUsuario />
                 </Route>
                 <Route path="/productosMaestro" exact>
                   <ProductosMaestro />
@@ -74,3 +57,28 @@ function App() {
 }
 
 export default App;
+
+
+
+
+/* -----------COMENTARIOS-----------------
+****para modificar y hacer pruebas (futuro)****
+
+//import ModuloUsuarios from './pages/ModuloUsuarios';
+//import EditarUsuario from './pages/editarUsuario';
+//import EditarUsuario2 from './pages/editarUsuario2';
+//import EliminarUsuario from './pages/eliminarUsuario';
+
+<Route path="/editarUsuario2" exact>
+<EditarUsuario2 />
+</Route>
+
+<Route path="/editarUsuario" exact>
+  <EditarUsuario />
+</Route>
+
+<Route path="/eliminarUsuario" exact>
+  <EliminarUsuario />
+</Route>
+
+*/

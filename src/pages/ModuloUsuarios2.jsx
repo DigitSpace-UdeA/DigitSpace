@@ -1,39 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { nanoid } from 'nanoid';
 import { obtenerUsuarios } from '../utils/api';
-import { actualizarUsuario } from '../utils/api';
-import EditarUsuario2 from './editarUsuario2';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-//import EliminarUsuario from './eliminarUsuario';
- /*const UsuariosBackend = [
-        {
-            
-            usuario: "12Mark",
-            rol: "Vendedor",
-            estado: "Autorizado",
-        },
-        {
-            
-            usuario: "2Mark",
-            rol: "Vendedor",
-            estado: "Autorizado",
-        },
-        {
-            
-            usuario: "3Mark",
-            rol: "Administrador",
-            estado: "Autorizado",
-        },
-        {
-            
-            usuario: "284Mark",
-            rol: "Vendedor",
-            estado: "Autorizado",
-        }
-    ];*/
-
 
 
 
@@ -82,20 +52,18 @@ const TablaUsuarios = ({listaUsuarios, setEjecutarConsulta}) => {
     };*/
 
     return <div> 
-               
-       <div className= 'flex flex-col items-center justify-center'>
-        <h2 className = 'text-2xl font-extrabold text-gray-800'> Modulo de usuarios y roles</h2>
-        
+         <h2 className = 'text-2xl font-extrabold text-gray-800 text-center'> Modulo de usuarios y roles</h2>      
+       <div className= 'flex flex-col items-center justify-center '>        
         <table>
         <thead>
-            <tr>
+            <tr >
             <th>Usuario</th>
             <th>Rol</th>
             <th>Estado</th>
             <th>Opciones</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody className='text-gray-700'>
             {listaUsuarios.map((usuario) => {
                 return <FilaUsuario key={nanoid()} usuario={usuario} setEjecutarConsulta={setEjecutarConsulta}/>
             })}
@@ -107,17 +75,7 @@ const TablaUsuarios = ({listaUsuarios, setEjecutarConsulta}) => {
 };
 
 const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
-    /*const editRow = (usuario) => {
-        setUsuarioActual({
-            id: usuario._id, 
-            Usuario: usuario.usuario, 
-            Rol: usuario.rol,
-            Estado: usuario.estado
-        })   }; 
-    
-    const [usuarioActual, setUsuarioActual] = useState({
-    _id: null, usuario: ''
-    , rol: ' ', estado: ''   });*/
+
     console.log("usuario",usuario)
     const [edit,setEdit] = useState (false)  
     const [infoNuevoUsuario, setInfoNuevoUsuario] = useState({
@@ -182,13 +140,14 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
             {edit ?
                 <>
                     <td  >
-                        <input className="input-editForm
-                        flex-col  justify-center text-center" type="text"  name= "usuario" 
+                        <input className=" rounded-md border-2 hover:border-blue-300 border-gray-400 focus:border-blue-300 
+                        flex-col  justify-center text-center
+                         " type="text"  name= "usuario" 
                         value={infoNuevoUsuario.usuario}
                         onChange={e=>setInfoNuevoUsuario({...infoNuevoUsuario, usuario:e.target.value})}  />
                     </td>
                     <td  >
-                        <select className="input-editForm
+                        <select className="rounded-md border-2 hover:border-blue-300 border-gray-400 focus:border-blue-300 input-edit-Form
                         flex-col  justify-center items-center" type="text" name= "rol" 
                         value={infoNuevoUsuario.rol}
                         onChange={e=>setInfoNuevoUsuario({...infoNuevoUsuario, rol:e.target.value})}
@@ -197,7 +156,7 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
                             <option >Administrador</option>
                         </select></td>
                     <td >
-                        <select className="input-editForm
+                        <select className="rounded-md border-2 hover:border-blue-300 border-gray-400 focus:border-blue-300 input-edit-Form
                         flex-col text-center justify-center" 
                         value={infoNuevoUsuario.estado}
                         onChange={e=>setInfoNuevoUsuario({...infoNuevoUsuario, estado:e.target.value})}>
@@ -219,7 +178,7 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
                 {edit? (
                 
                 <i type="submit" onClick={()=> actualizarUsuario()}
-                className="far fa-check-circle text-green-400 hover:text-green-300  btn-opcioncheck"></i>
+                className="far fa-check-circle text-green-400 hover:text-green-300  btn-opcioncheck cursor-pointer pt-0.5 text-s"></i>
                 
                 ):(
 
@@ -239,68 +198,50 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
     )
 }
 
-const FormEdit = ({usuario}) =>{
-        
-    /*const [editFila, setEditFila]= useState([]);
-
-    useEffect(() => {
-        //obtener lista desde el front
-        FilaUsuario(setEditFila)
-    }, []);*/
-
-
-  //  const [edit, setEdit] = useState([FilaUsuario]);   
-
-    return (
-         
-        
-        <div>
-            <h2 className="titulo">Editar - Modulo de Usuarios y Roles</h2>
-            <div className="section-edit">
-                <form className="form-edit" >
-              
-                    <label><i className="fas fa-user-tie"></i>
-                        Usuario
-                        <input className="input-edit" type="text"  name= "Usuario" />
-                    </label>
-                    <label><i className="fas fa-briefcase"></i>
-                        Rol
-                        <select className="input-edit" name= "Rol" >
-                            <option>Vendedor</option>
-                            <option>Administrador</option>
-                        </select></label>
-                    <label><i className="fas fa-unlock-alt" ></i>
-                        Estado
-                        <select className="input-edit" >
-                            <option>Autorizado</option>
-                            <option>No Autorizado</option>
-                            <option>Pendiente</option>
-                        </select>
-                    </label>
-                    
-                    <button className="button-gen btn-submit-edit" type="submit">
-                        <i className="fas fa-save"></i>
-                        Guardar
-                    </button>
-                    
-                </form>
-            </div>
-
-        </div> 
-    )}
-
-const EnvioDatos = () => {
-    //const [editarUsuario, setEditarUsuario]= useEffect([]);
-
-    //useEffect(() => {
-        //obtener lista desde el front
-        //  setEditarUsuario(usuarioTabla)
-    //}, []);
-    
-
-
-    return( <FormEdit />);
-};
 
 
 export default Usuarios;
+
+
+
+
+/* -----------COMENTARIOS-----------------
+
+//import { actualizarUsuario } from '../utils/api';
+//import EditarUsuario2 from './editarUsuario2';
+
+
+//import EliminarUsuario from './eliminarUsuario';
+ /*const UsuariosBackend = [
+        {
+            
+            usuario: "12Mark",
+            rol: "Vendedor",
+            estado: "Autorizado",
+        },
+        {
+            
+            usuario: "2Mark",
+            rol: "Vendedor",
+            estado: "Autorizado",
+        },
+        {
+            
+            usuario: "3Mark",
+            rol: "Administrador",
+            estado: "Autorizado",
+        },
+        {
+            
+            usuario: "284Mark",
+            rol: "Vendedor",
+            estado: "Autorizado",
+        }
+    ];
+
+
+
+*/
+
+
+
