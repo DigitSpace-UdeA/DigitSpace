@@ -3,7 +3,7 @@ import axios from "axios";
 export const obtenerUsuarios = async (setUsuarios) => {
     const options = { 
     method: 'GET', 
-    url: 'http://localhost:5000/moduloUsuarios2' };
+    url: 'http://localhost:5000/moduloUsuarios' };
     
     axios.
     request(options).

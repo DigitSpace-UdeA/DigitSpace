@@ -6,7 +6,7 @@ import LoginModule from './pages/loginModule';
 import VentasMaestro from './pages/ventasMaestro';
 import ProductosMaestro from './pages/productosMaestro';
 import ProductosRegistro from './pages/productosRegistro';
-import ModuloUsuarios2 from './pages/ModuloUsuarios2';
+import ModuloUsuarios from './pages/ModuloUsuarios';
 import LandingPage from './layouts/landingPage';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -21,7 +21,7 @@ function App() {
             <Layout>
               <Switch>
                 <Route path="/ModuloUsuarios2" exact>
-                  <ModuloUsuarios2 />
+                  <ModuloUsuarios />
                 </Route>
                 <Route path="/productosMaestro" exact>
                   <ProductosMaestro />
