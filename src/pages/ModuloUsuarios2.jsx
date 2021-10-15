@@ -41,24 +41,34 @@ const Usuarios = () => {
 
     //const [usuarios, setUsuarios] = useEffect([]);
     const [usuarios, setUsuarios]= useState([]);
+    const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
 
     useEffect(() => {
         //obtener lista desde el back
         obtenerUsuarios(setUsuarios)
     }, []);
 
+    //nuevo para cargar again
+    useEffect (()=>{
+        if (ejecutarConsulta){
+        obtenerUsuarios(setUsuarios);
+        setEjecutarConsulta(false)
+        }
+    }, [ejecutarConsulta]);
+    //nuevo 
+
+
+
     return(
-        <div>pagina principal
-        <TablaUsuarios listaUsuarios={usuarios}/>
-       <ToastContainer position='bottom-center' autoClose={5000} /></div> 
+        <div>
+        <TablaUsuarios listaUsuarios={usuarios} setEjecutarConsulta={setEjecutarConsulta}/>
+        <ToastContainer position='bottom-center' autoClose={5000} /></div> 
     );
 
     
 };
 
-
-
-const TablaUsuarios = ({listaUsuarios}) => {
+const TablaUsuarios = ({listaUsuarios, setEjecutarConsulta}) => {
     
     //const form = useRef(null);
     useEffect(() =>{
@@ -87,7 +97,7 @@ const TablaUsuarios = ({listaUsuarios}) => {
         </thead>
         <tbody>
             {listaUsuarios.map((usuario) => {
-                return <FilaUsuario key={nanoid()} usuario={usuario}/>
+                return <FilaUsuario key={nanoid()} usuario={usuario} setEjecutarConsulta={setEjecutarConsulta}/>
             })}
         </tbody>
         </table>
@@ -96,7 +106,7 @@ const TablaUsuarios = ({listaUsuarios}) => {
         </div>
 };
 
-const FilaUsuario = ({usuario}) => {
+const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
     /*const editRow = (usuario) => {
         setUsuarioActual({
             id: usuario._id, 
@@ -134,7 +144,7 @@ const FilaUsuario = ({usuario}) => {
                   console.log(response.data);
                   toast.success('usuario modificado con éxito');
                   setEdit(false);
-                  //setEjecutarConsulta(true);
+                  setEjecutarConsulta(true);
                 })
                 .catch(function (error) {
                   toast.error('Error modificando el producto');
@@ -143,7 +153,7 @@ const FilaUsuario = ({usuario}) => {
         };
 
 
-    const eliminarUsuario = ()=>{
+    const eliminarUsuario = async ()=>{
      
         const options = {
             method: 'DELETE',
@@ -152,12 +162,12 @@ const FilaUsuario = ({usuario}) => {
             data: { id: usuario._id },
           };
       
-           axios
+          await axios
             .request(options)
             .then(function (response) {
               console.log(response.data);
               toast.success('Usuario eliminado con éxito');
-              //setEjecutarConsulta(true);
+              setEjecutarConsulta(true);
             })
             .catch(function (error) {
               console.error(error);
