@@ -1,5 +1,6 @@
 
 import axios from "axios";
+
 export const obtenerUsuarios = async (setUsuarios) => {
     const options = { 
     method: 'GET', 
@@ -15,6 +16,7 @@ export const obtenerUsuarios = async (setUsuarios) => {
     });
 }
 
+// Sección para las ventas
 
 /*
 export const actualizarUsuario = async (setInfoNuevoUsuario) => {
