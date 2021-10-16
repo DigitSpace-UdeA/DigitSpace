@@ -19,7 +19,7 @@ import img13 from '../media/Imagen 13.jpg'
 function Main() {
 
     return (
-        <div className="">
+        <div className="sticky top-0 h-full">
 
             <h1 className="title"> ¡Bienvenido! </h1> <br />
                 <p>¡Bienvenido! Nuevamente estamos aquí para decirte que esperamos que esta empresa sea tu hogar durante muchos
