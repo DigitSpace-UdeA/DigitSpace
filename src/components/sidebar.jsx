@@ -1,4 +1,5 @@
 import '../style/MainStyles.css';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
 
@@ -20,7 +21,13 @@ const Sidebar = () => {
                             <h4> Menú Principal </h4>
                         </div>
                     </a>
-                    <a href="#">
+                    <Link to ={'/productos'}>
+                        <div class="opcion">
+                            <i class="fas fa-couch" title="Administrar productos"></i>
+                            <h4> Administrar productos </h4>
+                        </div>
+                    </Link>
+                    {/*<a href="#">
                         <div class="opcion">
                             <i class="fas fa-couch" title="Registrar Productos"></i>
                             <h4> Registrar Productos </h4>
@@ -31,7 +38,7 @@ const Sidebar = () => {
                             <i class="fas fa-luggage-cart" title="Gestionar Productos"></i>
                             <h4> Gestionar Productos </h4>
                         </div>
-                    </a>
+                    </a>*/}
                     <a href="#">
                         <div class="opcion">
                             <i class="fas fa-shopping-cart" title="Registrar Venta"></i>
