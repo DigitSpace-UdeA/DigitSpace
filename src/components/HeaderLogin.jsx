@@ -6,10 +6,11 @@ const Header = () => {
     return(
       <header className="header ">
      
-      <div>
+      <div className = "flex">
   
-        <div className="nameCompany">
-          <img src={logo} alt="imagen" className="Logo text" /> Compañía de manufactura
+        <div className="flex flex-auto ">
+          <img src={logo} alt="imagen" className="Logo text" /> 
+          <div className="text-2xl text-center pt-4 pl-4 text-white"><h4>Compañía de manufactura</h4></div>
         </div>
   
         <nav>
