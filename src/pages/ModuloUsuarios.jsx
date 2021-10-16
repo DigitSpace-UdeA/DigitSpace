@@ -91,9 +91,9 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
             //enviar info al backend
             const options = {
                 method: 'PATCH',
-                url: 'http://localhost:5000/moduloUsuarios/editar', // `http://localhost:5000/productos/${producto._id}`
+                url: 'http://localhost:5000/moduloUsuarios/editar', 
                 headers: { 'Content-Type': 'application/json' },
-                data: { ... infoNuevoUsuario, id: usuario._id }, // data: { ...infoNuevoProducto, id: producto._id },
+                data: { ... infoNuevoUsuario, id: usuario._id }, 
               };
           
              await axios
@@ -178,7 +178,7 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
             <div className = 'flex w-full justify-around'>
                 {edit? (
                 
-                <i type="submit" onClick={()=> actualizarUsuario()}
+                <i title="Guardar" type="submit" onClick={()=> actualizarUsuario()}
                 className="far fa-check-circle text-green-400 hover:text-green-300  btn-opcioncheck cursor-pointer pt-0.4 text-xl"></i>
                 
                 ):(
