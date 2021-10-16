@@ -140,11 +140,12 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
             {edit ?
                 <>
                     <td  >
-                        <input className=" rounded-md border-2 hover:border-blue-300 border-gray-400 focus:border-blue-300 
-                        flex-col  justify-center text-center
+                        <input className=" rounded-md border-2 border-gray-400 
+                        flex-col  justify-center text-center bg-blue-200 border-double focus:border-blue-500
                          " type="text"  name= "usuario" 
-                        value={infoNuevoUsuario.usuario}
-                        onChange={e=>setInfoNuevoUsuario({...infoNuevoUsuario, usuario:e.target.value})}  />
+                         value = {usuario.usuario} readOnly
+                        /*value={infoNuevoUsuario.usuario}
+                        onChange={e=>setInfoNuevoUsuario({...infoNuevoUsuario, usuario:e.target.value})}*/  />
                     </td>
                     <td  >
                         <select className="rounded-md border-2 hover:border-blue-300 border-gray-400 focus:border-blue-300 input-edit-Form
