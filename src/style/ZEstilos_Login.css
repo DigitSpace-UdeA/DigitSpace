@@ -104,8 +104,7 @@ vertical-align: middle;
     position: fixed;
     bottom: 0;
     color: white;
-    padding-bottom: 20px;
-    padding-top: 15px;
+    padding: 10px;
 }
 
 .colorIcon{
@@ -185,9 +184,9 @@ vertical-align: middle;
     }
 }
 /* Slideeeeer--------------*/
-.slider{
+.sliderlog{
     margin-left: 50px;
-    padding-top: 150px;
+    margin-top: 40px;
     width: 600px;
     height: 350px;
     overflow: hidden;
@@ -197,17 +196,17 @@ vertical-align: middle;
     
     
 }
-.slider ul{
+.sliderlog ul{
     display: flex;
     animation: cambio 20s infinite 
     alternate linear;
     width: 300%;
 }
-.slider li{
+.sliderlog li{
     width: 100%;
     list-style: none;
 }
-.slider img{
+.sliderlog img{
     width: 600px;
     height: 400px;
 }

@@ -178,7 +178,7 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
                 {edit? (
                 
                 <i type="submit" onClick={()=> actualizarUsuario()}
-                className="far fa-check-circle text-green-400 hover:text-green-300  btn-opcioncheck cursor-pointer pt-0.5 text-s"></i>
+                className="far fa-check-circle text-green-400 hover:text-green-300  btn-opcioncheck cursor-pointer pt-0.4 text-xl"></i>
                 
                 ):(
 

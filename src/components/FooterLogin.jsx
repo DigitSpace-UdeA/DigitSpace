@@ -2,7 +2,7 @@ import '../style/ZEstilos_Login.css';
 
 const Footer = () => {
     return(
-      <footer className="footerLog " >
+      <footer className="footerLog  " >
       <div>
         <center>
           <span className="mainSpace"> Copyright © 2021 · Software administrativo | Todos los derechos reservados
