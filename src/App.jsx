@@ -17,10 +17,10 @@ function App() {
       <Router>
         {/* <Link to="/">Home</Link> <Link to="/ModuloUsuarios">Usuarios</Link> */}
         <Switch>
-          <Route path={["/ModuloUsuarios", "/ModuloUsuarios2","/editarUsuario", "/editarUsuario2", "/eliminarUsuario", "/productosMaestro", "/productosRegistro", "/registroVentas", "/ventasMaestro", "/main"]} exact>
+          <Route path={["/ModuloUsuarios","/productosMaestro", "/productosRegistro", "/registroVentas", "/ventasMaestro", "/main"]} exact>
             <Layout>
               <Switch>
-                <Route path="/ModuloUsuarios2" exact>
+                <Route path="/ModuloUsuarios" exact>
                   <ModuloUsuarios />
                 </Route>
                 <Route path="/productosMaestro" exact>
