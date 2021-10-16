@@ -4,7 +4,7 @@ import logo from '../media/logo.svg'
 
 const Header = () => {
     return(
-      <header className="header ">
+      <header className="header sticky top-0">
      
       <div className = "flex">
   

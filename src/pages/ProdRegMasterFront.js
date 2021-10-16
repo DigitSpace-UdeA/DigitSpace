@@ -42,10 +42,10 @@ const Productos = () => {
   useEffect(() => {
     if (mostrarTabla) {
       setTextoBoton('Crear nuevo producto');
-      setColorBoton('indigo');
+      setColorBoton('gray');
     } else {
       setTextoBoton('Mostrar todos los productos');
-      setColorBoton('green');
+      setColorBoton('gray');
     }
   }, [mostrarTabla]);
   return (
@@ -59,7 +59,7 @@ const Productos = () => {
           onClick={() => {
             setMostrarTabla(!mostrarTabla);
           }}
-          className={`text-white bg-${colorBoton}-500 p-5 rounded-full m-6 w-28 self-end`}
+          className={`text-white bg-${colorBoton}-500 p-5 m-6 w-40 rounded-lg self-end`}
         >
           {textoBoton}
         </button>
