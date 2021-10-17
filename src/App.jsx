@@ -19,13 +19,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
 function App() {
   return (
 
     <div className="App">
-
-      <Router>
-        {/* <Link to="/">Home</Link> <Link to="/ModuloUsuarios">Usuarios</Link> */}
+       <Router>
         <Switch>
           <Route path={["/ModuloUsuarios", "/productos", "/registroVentas", "/ventasMaestro", "/main"]} exact>
             <Layout>
@@ -58,7 +57,7 @@ function App() {
             </LandingPage>
           </Route>
         </Switch>
-      </Router>
+      </Router> 
     </div>
   );
 }
