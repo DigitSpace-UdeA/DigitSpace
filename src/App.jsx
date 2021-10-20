@@ -16,18 +16,25 @@ import axios from 'axios';
 import { nanoid } from 'nanoid';
 //import { obtenerProductos } from 'utils/api';
 import 'react-toastify/dist/ReactToastify.css';
-
-
+import { Auth0Provider } from "@auth0/auth0-react";
+import Mainlayouts from './layouts/mainlayouts'
 
 function App() {
   return (
 
-    <div className="App">
+  <Auth0Provider
+    domain="digit-space.us.auth0.com"
+    clientId="aG3VBb8c92c3j0KWZmdWPmgmJqKpapxf"
+    redirectUri="http://localhost:3000/main"
+  >
 
+
+
+    <div className="App">
       <Router>
         {/* <Link to="/">Home</Link> <Link to="/ModuloUsuarios">Usuarios</Link> */}
         <Switch>
-          <Route path={["/ModuloUsuarios", "/productos", "/registroVentas", "/ventasMaestro", "/main"]} exact>
+          <Route path={["/ModuloUsuarios", "/productos", "/registroVentas", "/ventasMaestro"]} exact>
             <Layout>
               <Switch>
                 <Route path="/ModuloUsuarios" exact>
@@ -41,13 +48,30 @@ function App() {
                 </Route>
                 <Route path="/ventasMaestro" exact>
                   <VentasMaestro />
-                </Route>
+               </Route>
+                {/* <Route path="/main" exact>
+                  <Main />
+                </Route>*/}
+              </Switch>
+            </Layout>
+          </Route>
+
+
+          <Route path={[ "/main"]}>
+            <Mainlayouts>
+              <Switch>
                 <Route path="/main" exact>
                   <Main />
                 </Route>
               </Switch>
-            </Layout>
-          </Route>
+            </Mainlayouts>
+            </Route>
+
+
+
+
+
+
           <Route path={["/"]}>
             <LandingPage>
               <Switch>
@@ -60,6 +84,7 @@ function App() {
         </Switch>
       </Router>
     </div>
+  </Auth0Provider>
   );
 }
 

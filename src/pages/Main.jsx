@@ -16,9 +16,12 @@ import img11 from '../media/Imagen 11.jpg'
 import img12 from '../media/Imagen 12.jpg'
 import img13 from '../media/Imagen 13.jpg'
 
+//import PrivateRoute from '../components/PrivateRoute';
+
 function Main() {
 
     return (
+        //<PrivateRoute>
         <div className="sticky top-0 h-full">
 
             <h1 className="title"> ¡Bienvenido! </h1> <br />
@@ -51,7 +54,7 @@ function Main() {
                     </div>
                 </div>
         </div>
-
+        //</PrivateRoute>
     );
 }
 

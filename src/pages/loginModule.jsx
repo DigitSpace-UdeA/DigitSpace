@@ -9,7 +9,14 @@ import img19 from '../media/Imagen 19.jpg'
 //import img22 from '../media/Imagen 22.jpg'
 //import img23 from '../media/Imagen 23.jpg'
 
-const LoginModule = () => {
+import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+
+const LoginModule = ({}) => {
+
+    const { loginWithRedirect } = useAuth0();
     return (
         <>
 
@@ -31,10 +38,14 @@ const LoginModule = () => {
                     <i className="fas fa-user-clock colorIcon text-5xl mb-3 p-7 rounded-full bg-white"></i> <br />
                     <span> Ingresa o registrate <br /> con tu cuenta de google </span>
                     <br />
-                    <a href="Main"> <button className="button">
+                    <button 
+                        className="button"
+                        onClick={() => loginWithRedirect()}>                      
+                       
                         <i className="fab fa-google colorIcon"></i>
                         mail
-                    </button> </a>
+                    </button>
+                    
                 </div>
             </div>    
 
@@ -43,4 +54,22 @@ const LoginModule = () => {
     );
 
 }
+
+{/* 
+const Inicio =() =>{
+
+    const [autenticado, setAutenticado]= useState()
+    const {isAuthenticated} = useAuth0();
+
+    (isAuthenticated) ?
+    setAutenticado(true):
+    setAutenticado(false)
+    
+    if (setAutenticado(true)) return
+    <Link to='Main'/>
+          
+}
+*/}
+
+
 export default LoginModule;

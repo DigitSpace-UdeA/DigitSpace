@@ -1,9 +1,12 @@
 import '../style/Main.css';
 import { Link } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Sidebar = () => {
-
+    const { logout } = useAuth0();
     return (
+        
+
         <>
             {/* < !--Sección del Sidebar-- > */}
             <div className="menu_sidebar" id="menu_sidebar">
@@ -17,7 +20,7 @@ const Sidebar = () => {
 
                 <section className="opciones_menu">
 
-                    <a href="#" className="seleccionado">
+                    <a href="Main" className="seleccionado">
                         <div className="opcion">
                             <i className="fas fa-home text-xl" title="Inicio"></i>
                             <h4> Menú Principal </h4>
@@ -47,12 +50,11 @@ const Sidebar = () => {
                             <h4> Administrar productos </h4>
                         </div>
                     </Link>
-                    <a href="/Login_Module.html">
-                        <div className="opcion">
-                            <i className="fas fa-door-open text-xl" title="Salir"></i>
-                            <h4> Salir </h4>
-                        </div>
-                    </a>
+                         <button onClick={() => logout({ returnTo: window.location.origin })} 
+                            className="opcion">
+                            <i className="fas fa-door-open text-xl" title="Cerrar sesión"></i>
+                            <h4> Cerrar sesión </h4>
+                        </button>
                 </section>
             </div>
 
