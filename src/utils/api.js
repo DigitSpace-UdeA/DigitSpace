@@ -1,10 +1,21 @@
 
 import axios from "axios";
+
+export const getToken = () => {
+  return `Bearer ${localStorage.getItem(`token`)}`
+}
+
 export const obtenerUsuarios = async (setUsuarios) => {
     const options = { 
     method: 'GET', 
-    url: 'http://localhost:5000/moduloUsuarios' };
+    url: 'http://localhost:5000/moduloUsuarios',
     
+    headers: {
+      Authorization: getToken(),
+    },
+  };
+
+
     axios.
     request(options).
     then(function (response) {

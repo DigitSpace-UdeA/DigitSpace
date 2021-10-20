@@ -5,7 +5,24 @@ import { Link } from 'react-router-dom';
 
 const PrivateRoute = ({children}) => {
 
-    const {isAuthenticated, isLoading } = useAuth0();
+    const {isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
+
+    useEffect(( )=> {
+        const fetchAuth0Token = async () =>{
+             const accessToken = await getAccessTokenSilently({
+                audience: "api-autenticacion-digitspace",
+            });
+            localStorage.setItem("token", accessToken)
+            console.log(accessToken);
+        };
+        if (isAuthenticated){
+
+            fetchAuth0Token()
+        }
+    
+
+    },[isAuthenticated, getAccessTokenSilently]);
+
 
     if (isLoading) return <div className= " flex h-screen justify-center items-center "> <div className="text-center bg-gray-600 p-5 rounded-full text-white text-3xl  border-double">Loading...</div></div>;
     return isAuthenticated ? (

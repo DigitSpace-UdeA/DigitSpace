@@ -4,6 +4,7 @@ import axios from 'axios';
 import { nanoid } from 'nanoid';
 //import { obtenerProductos } from 'utils/api';
 import 'react-toastify/dist/ReactToastify.css';
+import {getToken} from '../utils/api.js'
 
 const Productos = () => {
   const [mostrarTabla, setMostrarTabla] = useState(true);
@@ -13,7 +14,8 @@ const Productos = () => {
   const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
 
   const obtenerProductos = async (setProductos, setEjecutarConsulta = () => {}) => {
-    const options = { method: 'GET', url: 'http://localhost:5000/productos' }; // 'http://localhost:5000/vehiculos/'
+    const options = { method: 'GET', url: 'http://localhost:5000/productos',
+    headers: {Authorization: getToken(),}, }; // 'http://localhost:5000/vehiculos/'
     await axios
       .request(options)
       .then(function (response) {
@@ -144,7 +146,7 @@ const FilaProducto = ({ producto, setEjecutarConsulta }) => {
     const options = {
       method: 'PATCH',
       url: 'http://localhost:5000/productos/editar', // `http://localhost:5000/productos/${producto._id}`
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken() },
       data: { ...{name: infoNuevoProducto.name, brand: infoNuevoProducto.brand, valorunit: infoNuevoProducto.valorunit}, id: producto._id }, // data: { ...infoNuevoProducto, id: producto._id },
     };
 
@@ -166,7 +168,7 @@ const FilaProducto = ({ producto, setEjecutarConsulta }) => {
     const options = {
       method: 'DELETE',
       url: 'http://localhost:5000/productos/eliminar/',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken() },
       data: { id: producto._id },
     };
 
@@ -307,7 +309,7 @@ const FormularioCreacionProductos = ({ setMostrarTabla, listaProductos, setProdu
     const options = {
       method: 'POST',
       url: 'http://localhost:5000/productos/nuevo/', // 'http://localhost:5000/productos/nuevo/'
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', Authorization: getToken() },
       data: { name: nuevoProducto.name, brand: nuevoProducto.brand, valorunit: nuevoProducto.valorunit },
     };
 

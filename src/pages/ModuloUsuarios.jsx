@@ -4,7 +4,7 @@ import { obtenerUsuarios } from '../utils/api';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import {getToken} from '../utils/api.js'
 
 
 const Usuarios = () => {
@@ -92,7 +92,7 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
             const options = {
                 method: 'PATCH',
                 url: 'http://localhost:5000/moduloUsuarios/editar', 
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', Authorization: getToken() },
                 data: { ... infoNuevoUsuario, id: usuario._id }, 
               };
           
@@ -116,7 +116,7 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
         const options = {
             method: 'DELETE',
             url: 'http://localhost:5000/moduloUsuarios/eliminar/',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', Authorization: getToken() },
             data: { id: usuario._id },
           };
       

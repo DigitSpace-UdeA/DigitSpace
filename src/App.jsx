@@ -26,6 +26,7 @@ function App() {
     domain="digit-space.us.auth0.com"
     clientId="aG3VBb8c92c3j0KWZmdWPmgmJqKpapxf"
     redirectUri="http://localhost:3000/main"
+    audience="api-autenticacion-digitspace"
   >
 
 
