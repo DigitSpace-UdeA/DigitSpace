@@ -1,4 +1,4 @@
-import '../style/Estilos_Registro_Ventas.css';
+//import '../style/Estilos_Registro_Ventas.css';
 
 const RegistroVentas = () => {
     return (

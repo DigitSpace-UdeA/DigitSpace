@@ -300,8 +300,8 @@ tr:hover { /* th:hover also if you wish */
 }
 
 main {
-    /*overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;*/
+    overflow-y: none;
+    /*-webkit-overflow-scrolling: touch;*/
     flex: auto;
 }
 

@@ -1,4 +1,4 @@
-import '../style/VentasM_Style.css';
+//import '../style/VentasM_Style.css';
 
 const VentasMaestro = () => {
     return (

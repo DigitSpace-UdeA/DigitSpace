@@ -7,14 +7,26 @@ const PrivateRoute = ({children}) => {
 
     const {isAuthenticated, isLoading } = useAuth0();
 
-    if (isLoading) return <div> Loanding...</div>;
+    if (isLoading) return <div className= " flex h-screen justify-center items-center "> <div className="text-center bg-gray-600 p-5 rounded-full text-white text-3xl  border-double">Loading...</div></div>;
     return isAuthenticated ? (
     <> {children} </>
     ):(
-        <div><div className="text-xl">No estás autorizado</div> 
-        <Link to= '/'>
-            <span className='text-2xl text-green-500'>Llévame al inicio</span>
-        </Link>
+
+        <div className="flex flex-col  h-screen justify-center items-center text-center space-y-10">
+            <div className=" text-3xl text-center text-white bg-red-500 rounded-full py-5 w-6/12
+            ">No estás autorizado
+                <i class="fas fa-ban ml-4 text-2xl"></i>
+            </div> 
+            <div>
+            <button className=" bg-gray-400 hover:bg-red-gray-800 rounded-full p-6 cursor-pointer box-border">
+            <Link to= '/'>
+                <span className='flex justify-center flex-row space-x-5 text-2xl text-white 
+             '>Llévame al inicio
+                <i class="fas fa-home ml-4 text-2xl"></i>
+                </span>
+                
+            </Link></button>
+            </div>
         </div>
     
     );
