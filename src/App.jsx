@@ -1,9 +1,9 @@
 import './App.css';
 import Layout from "./layouts/layout";
 import Main from './pages/Main'
-import RegistroVentas from './pages/registroVentas';
+//import RegistroVentas from './pages/registroVentas';
 import LoginModule from './pages/loginModule';
-import VentasMaestro from './pages/ventasMaestro';
+import VentasMaestroFront from './pages/VentasMaestroFront';
 //import ProductosMaestro from './pages/productosMaestro';
 //import ProductosRegistro from './pages/productosRegistro';
 import ProdRegMasterFront from './pages/ProdRegMasterFront';
@@ -19,14 +19,15 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-
 function App() {
   return (
 
     <div className="App">
-       <Router>
+
+      <Router>
+        {/* <Link to="/">Home</Link> <Link to="/ModuloUsuarios">Usuarios</Link> */}
         <Switch>
-          <Route path={["/ModuloUsuarios", "/productos", "/registroVentas", "/ventasMaestro", "/main"]} exact>
+          <Route path={["/ModuloUsuarios", "/productos", "/ventas", "/main"]} exact>
             <Layout>
               <Switch>
                 <Route path="/ModuloUsuarios" exact>
@@ -34,12 +35,9 @@ function App() {
                 </Route>
                 <Route path='/productos'>
                   <ProdRegMasterFront/>
-                </Route>
-                <Route path="/registroVentas" exact>
-                  <RegistroVentas />
-                </Route>
-                <Route path="/ventasMaestro" exact>
-                  <VentasMaestro />
+                </Route>                
+                <Route path="/ventas" exact>
+                  <VentasMaestroFront/>
                 </Route>
                 <Route path="/main" exact>
                   <Main />
@@ -57,7 +55,7 @@ function App() {
             </LandingPage>
           </Route>
         </Switch>
-      </Router> 
+      </Router>
     </div>
   );
 }
