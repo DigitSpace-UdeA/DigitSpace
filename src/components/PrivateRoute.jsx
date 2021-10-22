@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
 import ReactLoading from 'react-loading';
@@ -9,19 +9,19 @@ import { useUser } from './context/userContex';
 
 const PrivateRoute = ({children}) => {
 
-    const {isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
-    
+    const {isAuthenticated, isLoading, getAccessTokenSilently, logout } = useAuth0();
+    const [loadingUserInformation, setLoadingUserInformation] = useState(false)
     const {setUserData}= useUser();
-
+    const cerrarSesion= () => {
+        logout({ returnTo: window.location.origin })
+        localStorage.setItem('token', null);
+    };
 
     useEffect(( )=> {
         const fetchAuth0Token = async () =>{
-            // si se quiere validar con el token
-            // if (localStorage.getItem('token')){
-            //     //validar fehca exp token
-
             // } else {pedir token}
             // 1 pedir token a outh 
+            setLoadingUserInformation(true);
              const accessToken = await getAccessTokenSilently({
                 audience: "api-autenticacion-digitspace",
             });
@@ -30,10 +30,15 @@ const PrivateRoute = ({children}) => {
             // recibir el token en backend
             await obtenerDatosUsuario((response) =>{
                 console.log('response con datos del usuario', response);
-                setUserData(response.data);
+                setUserData(response);
+                setLoadingUserInformation(false)
+               
 
             }, (err) => {
                  console.log('err', err)
+                 setLoadingUserInformation(false)
+                 cerrarSesion()
+                 
             })
             console.log(accessToken);
         };
@@ -46,7 +51,7 @@ const PrivateRoute = ({children}) => {
     },[isAuthenticated, getAccessTokenSilently]);
 
 
-    if (isLoading) return <div className= " flex h-screen justify-center items-center "> 
+    if (isLoading || loadingUserInformation) return <div className= " flex h-screen justify-center items-center "> 
     {/* <div className="text-center bg-gray-600 p-5 rounded-full text-white text-3xl  border-double">Loading...</div> */}
     <ReactLoading type='bars' color='blue' height={300} width={300} />:
     </div>;

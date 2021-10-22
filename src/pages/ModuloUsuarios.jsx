@@ -57,6 +57,8 @@ const TablaUsuarios = ({loading, listaUsuarios, setEjecutarConsulta}) => {
     };*/
 
     return <div> 
+    <PrivateComponent roleList={'Administrador'}>
+
          <h2 className = 'text-2xl font-extrabold text-gray-800 text-center pb-5 pt-3'> Modulo de usuarios y roles</h2>      
       
        {/* <PrivateComponent roleList={['Admnistrador','Vendedor']} ><button className='text-black'> hola JA</button></PrivateComponent> */}
@@ -80,6 +82,8 @@ const TablaUsuarios = ({loading, listaUsuarios, setEjecutarConsulta}) => {
             </table>
         }    
         </div>
+     </PrivateComponent>
+
         </div>
 };
 
@@ -88,7 +92,7 @@ const TablaUsuarios = ({loading, listaUsuarios, setEjecutarConsulta}) => {
 
 const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
 
-    console.log("usuario",usuario)
+    console.log("usuariofff",usuario)
     const [edit,setEdit] = useState (false)  
     const [infoNuevoUsuario, setInfoNuevoUsuario] = useState({
         name: usuario.name,
@@ -168,16 +172,16 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
                         >
                             <option value='Vendedor'>Vendedor</option>
                             <option value='Administrador'>Administrador</option>
-                            <option value='Inactivo'>Inactivo</option>
+                            <option value='Sin rol'>Sin rol</option>
                         </select></td>
                     <td >
                         <select className="rounded-md border-2 hover:border-blue-300 border-gray-400 focus:border-blue-300 input-edit-Form
                         flex-col text-center justify-center" 
                         value={infoNuevoUsuario.estado}
                         onChange={e=>setInfoNuevoUsuario({...infoNuevoUsuario, estado:e.target.value})}>
-                            <option>Autorizado</option>
-                            <option>No Autorizado</option>
-                            <option>Pendiente</option>
+                            <option value="Autorizado">Autorizado</option>
+                            <option value="No Autorizado">No Autorizado</option>
+                            <option value="Pendiente">Pendiente</option>
                         </select></td>
 
                 </>
@@ -189,7 +193,6 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
             </>
             }
             <td> 
-            <PrivateComponent roleList={'Administrador'}>
             <div className = 'flex w-full justify-around'>
                 {edit? (
                 
@@ -209,7 +212,6 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
                 <i className="fas fa-trash-alt"></i>
                 </button>
             </div>
-            </PrivateComponent>
             </td> 
            
             </tr>
@@ -218,6 +220,11 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
 
 // const RolesUsuario = ({ usuario }) => {
 //     const [rol, setRol] = useState(user.rol);
+
+
+// const habilitarUsuarios = () =>{
+
+// }
 
 
 export default Usuarios;

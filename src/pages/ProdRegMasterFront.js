@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid';
 //import { obtenerProductos } from 'utils/api';
 import 'react-toastify/dist/ReactToastify.css';
 import {getToken} from '../utils/api.js'
+import PrivateComponent from '../components/PrivateComponent.jsx';
 
 const Productos = () => {
   const [mostrarTabla, setMostrarTabla] = useState(true);
@@ -52,6 +53,7 @@ const Productos = () => {
   }, [mostrarTabla]);
   return (
     <>
+    <PrivateComponent roleList={'Administrador'}>
     <div className='flex h-full w-full flex-col items-center justify-start p-8'>
       <div className='flex flex-col w-full'>
         <h2 className='text-3xl font-extrabold text-gray-900'>
@@ -67,7 +69,11 @@ const Productos = () => {
         </button>
       </div>
       {mostrarTabla ? (
+            
+
         <TablaProductos listaProductos={productos} setEjecutarConsulta={setEjecutarConsulta} />
+     
+        
       ) : (
         <FormularioCreacionProductos
           setMostrarTabla={setMostrarTabla}
@@ -77,6 +83,7 @@ const Productos = () => {
       )}
       <ToastContainer position='bottom-center' autoClose={5000} />
     </div>
+    </PrivateComponent>
     </>
   );
 };

@@ -4,11 +4,14 @@ import { useUser } from './context/userContex';
 const PrivateComponent = ({roleList, children}) => {
     const {userData} = useUser();
 
-        if (roleList.includes('Administrador')){
+    console.log("userdataaaaaa", userData)
+        if (roleList.includes(userData.rol)){
             return children
         }
       return <>
-      
+        <div>
+            NO TIENES ACCESO 
+        </div>
       </>  
 };
 
