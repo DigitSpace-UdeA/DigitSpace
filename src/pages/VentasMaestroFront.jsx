@@ -3,16 +3,23 @@ import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 import 'react-toastify/dist/ReactToastify.css';
+import {getToken} from '../utils/api.js';
+//import {obtenerProductos} from './ProdRegMasterFront';
+
 
 const Venta = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [ventas, setVentas] = useState([]);
+    const [productos, setProductos] = useState([]);
+    //const [vendedores, setVendedores] = useState([]);
     const [textoBoton, setTextoBoton] = useState('Buscar Venta');
     const [colorBoton, setColorBoton] = useState('grey');
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
 
-    const obtenerVentas = async (setVenta, setEjecutarConsulta = () => {}) => {
-        const options = { method: 'GET', url: 'http://localhost:5000/ventas' };
+
+  
+    const obtenerVentas = async (setVenta, setEjecutarConsulta = () => {}) => {   
+        const options = { method: 'GET', url: 'http://localhost:5000/ventas', headers: {Authorization: getToken(), },};
         await axios
           .request(options)
           .then(function (response) {
@@ -22,7 +29,7 @@ const Venta = () => {
             console.error(error);
           });
         setEjecutarConsulta(false);
-      };
+      };      
 
       useEffect (() => {
           console.log('Consulta', ejecutarConsulta);
@@ -47,6 +54,18 @@ const Venta = () => {
         }
       }, [mostrarTabla]);
 
+     // useEffect(() =>{
+      //  console.log('consulta', ejecutarConsulta);
+      //  if (ejecutarConsulta) {
+      //    obtenerProductos(
+     //       (response)=>{
+     //         setProductos(response.data);
+     //       }
+     //     )
+     //   }
+    //  })
+
+      
       return (
         <>        
         <div className='flex h-full w-full flex-col items-center justify-start p-8'>
@@ -130,12 +149,13 @@ const TablaVenta = ({listaVentas, setEjecutarConsulta}) => {
       );  
 }
 
-const FilaVenta = ({ venta, setEjecutarConsulta }) => {
+const FilaVenta = ({productos, venta, setEjecutarConsulta }) => {
     const [edit, setEdit] = useState(false);
     const [borrar, setBorrar] = useState(false);
     //const [openDialog, setOpenDialog] = useState(false);
     const [infoNuevoVenta, setInfoNuevoVenta] = useState({
-        Id_Producto: venta.Id_Producto,
+        _id: venta._id,
+        productos: productos,
         cantidad: venta.cantidad,
         valorunit: venta.valorunit,
         valortotal: venta.valortotal,
@@ -145,9 +165,9 @@ const FilaVenta = ({ venta, setEjecutarConsulta }) => {
         //enviar la info al backend
         const options = {
           method: 'PATCH',
-          url: 'http://localhost:5000/ventas/:id',
-          headers: { 'Content-Type': 'application/json' },
-          data: { ...{cantidad: setInfoNuevoVenta.cantidad, valorunit: setInfoNuevoVenta.valorunit, valortotal: setInfoNuevoVenta.valortotal}, Id_Producto: venta.Id_Producto },
+          url: 'http://localhost:5000/ventas/editar',
+          headers: { 'Content-Type': 'application/json', Authorization: getToken()},
+          data: { ...{cantidad: infoNuevoVenta.cantidad, valorunit: infoNuevoVenta.valorunit, valortotal: infoNuevoVenta.valortotal}, id: venta._id, productos: infoNuevoVenta.productos },
         };
 
         await axios
@@ -167,9 +187,9 @@ const FilaVenta = ({ venta, setEjecutarConsulta }) => {
     const eliminarVentas = async () => {
         const options = {
           method: 'DELETE',
-          url: 'http://localhost:5000/ventas/:id',
-          headers: { 'Content-Type': 'application/json' },
-          data: { Id_Producto: venta.Id_Producto },
+          url: 'http://localhost:5000/ventas/eliminar',
+          headers: { 'Content-Type': 'application/json',Authorization: getToken() },
+          data: { _id: venta._id },
         };
 
         await axios
@@ -190,12 +210,13 @@ const FilaVenta = ({ venta, setEjecutarConsulta }) => {
         <tr>
           {edit ? (
             <>
-              <td>{setInfoNuevoVenta.Id_Producto}</td>
+              <td>{infoNuevoVenta._id}</td>
+              <td>{infoNuevoVenta.productos}</td>
               <td>
                 <input
                   className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
                   type='text'
-                  value={setInfoNuevoVenta.cantidad}
+                  value={infoNuevoVenta.cantidad}
                   onChange={(e) => setInfoNuevoVenta({ ...infoNuevoVenta, cantidad: e.target.value })}
                 />
               </td>
@@ -222,7 +243,8 @@ const FilaVenta = ({ venta, setEjecutarConsulta }) => {
             </>
           ) : (
             <>
-              <td>{venta.Id_Producto.slice(20)}</td>
+              <td>{venta._id.slice(20)}</td>
+              <td>{venta.productos}</td>
               <td>{venta.cantidad}</td>
               <td>{venta.valorunit}</td>
               <td>{venta.valortotal}</td>
