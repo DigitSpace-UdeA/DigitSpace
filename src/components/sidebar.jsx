@@ -5,6 +5,11 @@ const Sidebar = () => {
 
     const { logout } = useAuth0();
 
+    const cerrarSesion= () => {
+        logout({ returnTo: window.location.origin })
+        localStorage.setItem('token', null);
+    };
+
     return (
         <>
             {/* < !--Sección del Sidebar-- > */}
@@ -49,8 +54,7 @@ const Sidebar = () => {
                             <h4> Administrar productos </h4>
                         </div>
                     </Link>
-                         <button onClick={() => logout({ returnTo: window.location.origin })} 
-                            className="opcion">
+                    <button onClick={() => cerrarSesion()} className="opcion">
                             <i className="fas fa-door-open text-xl" title="Cerrar sesión"></i>
                             <h4> Cerrar sesión </h4>
                         </button>

@@ -26,6 +26,32 @@ export const obtenerUsuarios = async (setUsuarios) => {
     });
 }
 
+export const obtenerDatosUsuario = async (setUsuarios) => {
+  const options = { 
+  method: 'GET', 
+  url: 'http://localhost:5000/moduloUsuarios/self',
+  
+  headers: {
+    Authorization: getToken(), //3 enviarle el token a auth0
+  },
+};
+
+
+  axios.
+  request(options).
+  then(function (response) {
+  setUsuarios(response.data)
+  })
+  .catch(function (error) {
+  console.error(error);
+  });
+}
+
+
+
+
+
+
 
 /*
 export const actualizarUsuario = async (setInfoNuevoUsuario) => {

@@ -18,8 +18,14 @@ import { nanoid } from 'nanoid';
 import 'react-toastify/dist/ReactToastify.css';
 import { Auth0Provider } from "@auth0/auth0-react";
 import Mainlayouts from './layouts/mainlayouts'
+import { UserContext } from './components/context/userContex';
+import PrivateRoute from './components/PrivateRoute';
+
 
 function App() {
+
+  const [userData,setUserData]= useState({})
+
   return (
 
   <Auth0Provider
@@ -32,10 +38,13 @@ function App() {
 
 
     <div className="App">
+
+      <UserContext.Provider value={{userData,setUserData}}> 
+
       <Router>
         {/* <Link to="/">Home</Link> <Link to="/ModuloUsuarios">Usuarios</Link> */}
         <Switch>
-          <Route path={["/ModuloUsuarios", "/productos", "/registroVentas", "/ventasMaestro"]} exact>
+          <Route path={["/ModuloUsuarios", "/productos", "/registroVentas", "/ventasMaestro", "/private"]} exact>
             <Layout>
               <Switch>
                 <Route path="/ModuloUsuarios" exact>
@@ -50,13 +59,15 @@ function App() {
                 <Route path="/ventasMaestro" exact>
                   <VentasMaestro />
                </Route>
+               <Route path="/private" exact>
+                  <PrivateRoute />
+               </Route>
                 {/* <Route path="/main" exact>
                   <Main />
                 </Route>*/}
               </Switch>
             </Layout>
           </Route>
-
 
           <Route path={[ "/main"]}>
             <Mainlayouts>
@@ -67,11 +78,6 @@ function App() {
               </Switch>
             </Mainlayouts>
             </Route>
-
-
-
-
-
 
           <Route path={["/"]}>
             <LandingPage>
@@ -84,6 +90,8 @@ function App() {
           </Route>
         </Switch>
       </Router>
+
+      </UserContext.Provider>
     </div>
   </Auth0Provider>
   );

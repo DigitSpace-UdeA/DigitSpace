@@ -5,6 +5,8 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {getToken} from '../utils/api.js'
+import ReactLoading from 'react-loading';
+import PrivateComponent from '../components/PrivateComponent';
 
 
 const Usuarios = () => {
@@ -12,10 +14,13 @@ const Usuarios = () => {
     //const [usuarios, setUsuarios] = useEffect([]);
     const [usuarios, setUsuarios]= useState([]);
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
-
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
         //obtener lista desde el back
-        obtenerUsuarios(setUsuarios)
+       setLoading(true);
+       
+        obtenerUsuarios(setUsuarios,setLoading(false) )
+
     }, []);
 
     //nuevo para cargar again
@@ -31,14 +36,14 @@ const Usuarios = () => {
 
     return(
         <div>
-        <TablaUsuarios listaUsuarios={usuarios} setEjecutarConsulta={setEjecutarConsulta}/>
+        <TablaUsuarios loading={loading} listaUsuarios={usuarios} setEjecutarConsulta={setEjecutarConsulta}/>
         <ToastContainer position='bottom-center' autoClose={5000} /></div> 
     );
 
     
 };
 
-const TablaUsuarios = ({listaUsuarios, setEjecutarConsulta}) => {
+const TablaUsuarios = ({loading, listaUsuarios, setEjecutarConsulta}) => {
     
     //const form = useRef(null);
     useEffect(() =>{
@@ -53,33 +58,40 @@ const TablaUsuarios = ({listaUsuarios, setEjecutarConsulta}) => {
 
     return <div> 
          <h2 className = 'text-2xl font-extrabold text-gray-800 text-center pb-5 pt-3'> Modulo de usuarios y roles</h2>      
-       <div className= 'flex flex-col items-center justify-center '>        
-        <table>
-        <thead>
-            <tr >
-            <th>Usuario</th>
-            <th>Rol</th>
-            <th>Estado</th>
-            <th>Opciones</th>
-            </tr>
-        </thead>
-        <tbody className='text-gray-700'>
-            {listaUsuarios.map((usuario) => {
-                return <FilaUsuario key={nanoid()} usuario={usuario} setEjecutarConsulta={setEjecutarConsulta}/>
-            })}
-        </tbody>
-        </table>
+      
+       {/* <PrivateComponent roleList={['Admnistrador','Vendedor']} ><button className='text-black'> hola JA</button></PrivateComponent> */}
        
+       <div className= 'flex flex-col items-center justify-center '>        
+       {loading ? <ReactLoading type='cylon' color='abc123' height={667} width={375} />:
+            <table>
+            <thead>
+                <tr >
+                <th>Usuario</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody className='text-gray-700'>
+                {listaUsuarios.map((usuario) => {
+                    return <FilaUsuario key={nanoid()} usuario={usuario} setEjecutarConsulta={setEjecutarConsulta}/>
+                })}
+            </tbody>
+            </table>
+        }    
         </div>
         </div>
 };
+
+
+
 
 const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
 
     console.log("usuario",usuario)
     const [edit,setEdit] = useState (false)  
     const [infoNuevoUsuario, setInfoNuevoUsuario] = useState({
-        usuario: usuario.usuario,
+        name: usuario.name,
         rol: usuario.rol,
         estado: usuario.estado
     })
@@ -131,9 +143,9 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
               console.error(error);
               toast.error('Error eliminando el usuario');
             });
-        
-
     };
+        // const [rol, setRol]=useState(usuario.rol);
+
 
         return (
         <tr className=" "> 
@@ -143,7 +155,7 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
                         <input className=" rounded-md border-2 border-gray-400 
                         flex-col  justify-center text-center bg-blue-200 border-double focus:border-blue-500
                          " type="text"  name= "usuario" 
-                         value = {usuario.usuario} readOnly
+                         value = {usuario.name} readOnly
                         /*value={infoNuevoUsuario.usuario}
                         onChange={e=>setInfoNuevoUsuario({...infoNuevoUsuario, usuario:e.target.value})}*/  />
                     </td>
@@ -151,10 +163,12 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
                         <select className="rounded-md border-2 hover:border-blue-300 border-gray-400 focus:border-blue-300 input-edit-Form
                         flex-col  justify-center items-center" type="text" name= "rol" 
                         value={infoNuevoUsuario.rol}
-                        onChange={e=>setInfoNuevoUsuario({...infoNuevoUsuario, rol:e.target.value})}
+                        // onChange={e=>setRol(e.target.value) }
+                        onChange={e=>setInfoNuevoUsuario({...infoNuevoUsuario, rol:e.target.value}) }
                         >
-                            <option >Vendedor</option>
-                            <option >Administrador</option>
+                            <option value='Vendedor'>Vendedor</option>
+                            <option value='Administrador'>Administrador</option>
+                            <option value='Inactivo'>Inactivo</option>
                         </select></td>
                     <td >
                         <select className="rounded-md border-2 hover:border-blue-300 border-gray-400 focus:border-blue-300 input-edit-Form
@@ -169,12 +183,13 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
                 </>
             :  
             <>
-            <td>{usuario.usuario}</td>
+            <td>{usuario.name}</td>
             <td>{usuario.rol}</td>
             <td>{usuario.estado}</td>
             </>
             }
-            <td>
+            <td> 
+            <PrivateComponent roleList={'Administrador'}>
             <div className = 'flex w-full justify-around'>
                 {edit? (
                 
@@ -194,11 +209,15 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
                 <i className="fas fa-trash-alt"></i>
                 </button>
             </div>
+            </PrivateComponent>
             </td> 
+           
             </tr>
     )
 }
 
+// const RolesUsuario = ({ usuario }) => {
+//     const [rol, setRol] = useState(user.rol);
 
 
 export default Usuarios;

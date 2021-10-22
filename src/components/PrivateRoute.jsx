@@ -1,18 +1,40 @@
 import React, { useEffect } from 'react'
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from 'react-router-dom';
+import ReactLoading from 'react-loading';
+import { obtenerDatosUsuario } from '../utils/api';
+import { useUser } from './context/userContex';
+// import { UserContext } from './context/userContex';
 
 
 const PrivateRoute = ({children}) => {
 
     const {isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
+    
+    const {setUserData}= useUser();
+
 
     useEffect(( )=> {
         const fetchAuth0Token = async () =>{
+            // si se quiere validar con el token
+            // if (localStorage.getItem('token')){
+            //     //validar fehca exp token
+
+            // } else {pedir token}
+            // 1 pedir token a outh 
              const accessToken = await getAccessTokenSilently({
                 audience: "api-autenticacion-digitspace",
             });
+            // 2 recibir token de auth0
             localStorage.setItem("token", accessToken)
+            // recibir el token en backend
+            await obtenerDatosUsuario((response) =>{
+                console.log('response con datos del usuario', response);
+                setUserData(response.data);
+
+            }, (err) => {
+                 console.log('err', err)
+            })
             console.log(accessToken);
         };
         if (isAuthenticated){
@@ -24,7 +46,10 @@ const PrivateRoute = ({children}) => {
     },[isAuthenticated, getAccessTokenSilently]);
 
 
-    if (isLoading) return <div className= " flex h-screen justify-center items-center "> <div className="text-center bg-gray-600 p-5 rounded-full text-white text-3xl  border-double">Loading...</div></div>;
+    if (isLoading) return <div className= " flex h-screen justify-center items-center "> 
+    {/* <div className="text-center bg-gray-600 p-5 rounded-full text-white text-3xl  border-double">Loading...</div> */}
+    <ReactLoading type='bars' color='blue' height={300} width={300} />:
+    </div>;
     return isAuthenticated ? (
     <> {children} </>
     ):(
