@@ -1,9 +1,9 @@
 import './App.css';
 import Layout from "./layouts/layout";
 import Main from './pages/Main'
-import RegistroVentas from './pages/registroVentas';
+// import RegistroVentas from './pages/registroVentas';
 import LoginModule from './pages/loginModule';
-import VentasMaestro from './pages/ventasMaestro';
+// import VentasMaestro from '../Eliminar/ventasMaestro';
 //import ProductosMaestro from './pages/productosMaestro';
 //import ProductosRegistro from './pages/productosRegistro';
 import ProdRegMasterFront from './pages/ProdRegMasterFront';
@@ -11,16 +11,16 @@ import ModuloUsuarios from './pages/ModuloUsuarios';
 import LandingPage from './layouts/landingPage';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import React, { useEffect, useState, useRef } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios';
-import { nanoid } from 'nanoid';
+// import { ToastContainer, toast } from 'react-toastify';
+// import axios from 'axios';
+// import { nanoid } from 'nanoid';
 //import { obtenerProductos } from 'utils/api';
 import 'react-toastify/dist/ReactToastify.css';
 import { Auth0Provider } from "@auth0/auth0-react";
 import Mainlayouts from './layouts/mainlayouts'
 import { UserContext } from './components/context/userContex';
 import PrivateRoute from './components/PrivateRoute';
-
+import VentasMaestroFront from './pages/VentasMaestroFront';
 
 function App() {
 
@@ -44,7 +44,7 @@ function App() {
       <Router>
         {/* <Link to="/">Home</Link> <Link to="/ModuloUsuarios">Usuarios</Link> */}
         <Switch>
-          <Route path={["/ModuloUsuarios", "/productos", "/registroVentas", "/ventasMaestro", "/private"]} exact>
+          <Route path={["/ModuloUsuarios", "/productos", "/Ventas", "/private"]} exact>
             <Layout>
               <Switch>
                 <Route path="/ModuloUsuarios" exact>
@@ -53,12 +53,9 @@ function App() {
                 <Route path='/productos'>
                   <ProdRegMasterFront/>
                 </Route>
-                <Route path="/registroVentas" exact>
-                  <RegistroVentas />
+                <Route path="/Ventas" exact>
+                  <VentasMaestroFront />
                 </Route>
-                <Route path="/ventasMaestro" exact>
-                  <VentasMaestro />
-               </Route>
                <Route path="/private" exact>
                   <PrivateRoute />
                </Route>

@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid';
 import 'react-toastify/dist/ReactToastify.css';
 import {getToken} from '../utils/api.js';
 //import {obtenerProductos} from './ProdRegMasterFront';
-
+import PrivateComponent from '../components/PrivateComponent.jsx';
 
 const Venta = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
@@ -67,7 +67,7 @@ const Venta = () => {
 
       
       return (
-        <>        
+        <>  <PrivateComponent roleList={'Administrador, Vendedor'}>     
         <div className='flex h-full w-full flex-col items-center justify-start p-8'>
           <div className='flex flex-col w-full'>
             <h2 className='text-3xl font-extrabold text-gray-900'>
@@ -93,7 +93,9 @@ const Venta = () => {
           )}
           <ToastContainer position='bottom-center' autoClose={5000} />
         </div>
+        </PrivateComponent>  
         </>
+
       );
 
     

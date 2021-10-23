@@ -36,22 +36,16 @@ const Sidebar = () => {
                             <h4> Administrar productos </h4>
                         </div>
                     </Link>
-                    <a href="#">
+                    <Link to ={'/Ventas'}>
                         <div className="opcion">
                             <i className="fas fa-shopping-cart text-xl" title="Registrar Venta"></i>
                             <h4> Registrar Venta </h4>
                         </div>
-                    </a>
-                    <a href="#">
-                        <div className="opcion">
-                            <i className="fas fa-clipboard-list text-xl" title="Gestionar Venta"></i>
-                            <h4> Gestionar Venta </h4>
-                        </div>
-                    </a>
+                    </Link>
                     <Link to ={'/ModuloUsuarios'}>
                         <div className="opcion">
                             <i className="fas fa-users-cog text-xl" title="Administrar Usuarios"></i>
-                            <h4> Administrar productos </h4>
+                            <h4> Usuarios </h4>
                         </div>
                     </Link>
                     <button onClick={() => cerrarSesion()} className="opcion">
