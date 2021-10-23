@@ -62,7 +62,7 @@ const TablaUsuarios = ({loading, listaUsuarios, setEjecutarConsulta}) => {
          <h2 className = 'text-2xl font-extrabold text-gray-800 text-center pb-5 pt-3'> Modulo de usuarios y roles</h2>      
       
        {/* <PrivateComponent roleList={['Admnistrador','Vendedor']} ><button className='text-black'> hola JA</button></PrivateComponent> */}
-       {loading ? <ReactLoading type='cylon' color='abc123' height={667} width={375} />:
+       
        <div className= 'flex flex-col items-center justify-center '>        
        
             <table>
@@ -74,14 +74,17 @@ const TablaUsuarios = ({loading, listaUsuarios, setEjecutarConsulta}) => {
                 <th>Opciones</th>
                 </tr>
             </thead>
+            {loading ? <ReactLoading type='cylon' color='abc123' height={667} width={375} />:
             <tbody className='text-gray-700'>
+
                 {listaUsuarios.map((usuario) => {
                     return <FilaUsuario key={nanoid()} usuario={usuario} setEjecutarConsulta={setEjecutarConsulta}/>
                 })}
-            </tbody>
+                
+            </tbody>} 
             </table>
            
-        </div>} 
+        </div>
      </PrivateComponent>
 
         </div>
