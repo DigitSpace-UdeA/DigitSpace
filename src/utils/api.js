@@ -10,7 +10,7 @@ export const getToken = () => {
 export const obtenerUsuarios = async (setUsuarios) => {
     const options = { 
     method: 'GET', 
-    url: 'http://localhost:5000/moduloUsuarios',
+    url:  `${baseURL}/moduloUsuarios`,
     
     headers: {
       Authorization: getToken(),
