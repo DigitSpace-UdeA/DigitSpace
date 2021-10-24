@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import {getToken} from '../utils/api.js'
 import PrivateComponent from '../components/PrivateComponent.jsx';
 
+const baseURL = "https://dry-mountain-91873.herokuapp.com";
+
 const Productos = () => {
   const [mostrarTabla, setMostrarTabla] = useState(true);
   const [productos, setProductos] = useState([]);
@@ -15,8 +17,8 @@ const Productos = () => {
   const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
 
   const obtenerProductos = async (setProductos, setEjecutarConsulta = () => {}) => {
-    const options = { method: 'GET', url: 'http://localhost:5000/productos',
-    headers: {Authorization: getToken(),}, }; // 'http://localhost:5000/vehiculos/'
+    const options = { method: 'GET', url: `${baseURL}/productos/`,
+    headers: {Authorization: getToken(),}, }; 
     await axios
       .request(options)
       .then(function (response) {
@@ -152,7 +154,7 @@ const FilaProducto = ({ producto, setEjecutarConsulta }) => {
     //enviar la info al backend
     const options = {
       method: 'PATCH',
-      url: 'http://localhost:5000/productos/editar', // `http://localhost:5000/productos/${producto._id}`
+      url: `${baseURL}/productos/editar`, 
       headers: { 'Content-Type': 'application/json', Authorization: getToken() },
       data: { ...{name: infoNuevoProducto.name, brand: infoNuevoProducto.brand, valorunit: infoNuevoProducto.valorunit}, id: producto._id }, // data: { ...infoNuevoProducto, id: producto._id },
     };
@@ -174,7 +176,7 @@ const FilaProducto = ({ producto, setEjecutarConsulta }) => {
   const eliminarProducto = async () => {
     const options = {
       method: 'DELETE',
-      url: 'http://localhost:5000/productos/eliminar/',
+      url: `${baseURL}/productos/eliminar/`,
       headers: { 'Content-Type': 'application/json', Authorization: getToken() },
       data: { id: producto._id },
     };
@@ -315,7 +317,7 @@ const FormularioCreacionProductos = ({ setMostrarTabla, listaProductos, setProdu
 
     const options = {
       method: 'POST',
-      url: 'http://localhost:5000/productos/nuevo/', // 'http://localhost:5000/productos/nuevo/'
+      url: `${baseURL}/productos/nuevo/`, 
       headers: { 'Content-Type': 'application/json', Authorization: getToken() },
       data: { name: nuevoProducto.name, brand: nuevoProducto.brand, valorunit: nuevoProducto.valorunit },
     };
