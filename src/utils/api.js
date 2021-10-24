@@ -1,6 +1,8 @@
 
 import axios from "axios";
 
+const baseURL = "https://dry-mountain-91873.herokuapp.com";
+
 export const getToken = () => {
   return `Bearer ${localStorage.getItem(`token`)}`
 }
@@ -29,7 +31,7 @@ export const obtenerUsuarios = async (setUsuarios) => {
 export const obtenerDatosUsuario = async (setUsuarios) => {
   const options = { 
   method: 'GET', 
-  url: 'http://localhost:5000/moduloUsuarios/self',
+  url:  `${baseURL}/moduloUsuarios/self/`,
   
   headers: {
     Authorization: getToken(), //3 enviarle el token a auth0

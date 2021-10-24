@@ -7,6 +7,8 @@ import {getToken} from '../utils/api.js';
 //import {obtenerProductos} from './ProdRegMasterFront';
 import PrivateComponent from '../components/PrivateComponent.jsx';
 
+const baseURL = "https://dry-mountain-91873.herokuapp.com";
+
 const Venta = () => {
     const [mostrarTabla, setMostrarTabla] = useState(true);
     const [ventas, setVentas] = useState([]);
