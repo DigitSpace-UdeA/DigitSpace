@@ -31,7 +31,7 @@ function App() {
   <Auth0Provider
     domain="digit-space.us.auth0.com"
     clientId="aG3VBb8c92c3j0KWZmdWPmgmJqKpapxf"
-    redirectUri="http://localhost:3000/main"
+    redirectUri="https://sheltered-refuge-14390.herokuapp.com//main"
     audience="api-autenticacion-digitspace"
   >
 
