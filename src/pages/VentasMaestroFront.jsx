@@ -19,7 +19,7 @@ const Venta = () => {
 
   
     const obtenerVentas = async (setVenta, setEjecutarConsulta = () => {}) => {   
-        const options = { method: 'GET', url: 'http://localhost:5000/ventas', headers: {Authorization: getToken(), },};
+        const options = { method: 'GET', url: `${baseURL}/ventas`, headers: {Authorization: getToken(), },};
         await axios
           .request(options)
           .then(function (response) {
@@ -167,7 +167,7 @@ const FilaVenta = ({productos, venta, setEjecutarConsulta }) => {
         //enviar la info al backend
         const options = {
           method: 'PATCH',
-          url: 'http://localhost:5000/ventas/editar',
+          url: `${baseURL}/ventas/editar/`,
           headers: { 'Content-Type': 'application/json', Authorization: getToken()},
           data: { ...{cantidad: infoNuevoVenta.cantidad, valorunit: infoNuevoVenta.valorunit, valortotal: infoNuevoVenta.valortotal}, id: venta._id, productos: infoNuevoVenta.productos },
         };
@@ -189,7 +189,7 @@ const FilaVenta = ({productos, venta, setEjecutarConsulta }) => {
     const eliminarVentas = async () => {
         const options = {
           method: 'DELETE',
-          url: 'http://localhost:5000/ventas/eliminar',
+          url: `${baseURL}/ventas/eliminar/`,
           headers: { 'Content-Type': 'application/json',Authorization: getToken() },
           data: { _id: venta._id },
         };
@@ -333,7 +333,7 @@ const FormularioRegistroVentas = ({ setMostrarTabla, listaVentas, setVentas }) =
 
         const options = {
             method: 'POST',
-            url: 'http://localhost:5000/ventas/nueva',
+            url: `${baseURL}/ventas/nueva/`,
             headers: { 'Content-Type': 'application/json' },
             data: { cantidad: nuevaVenta.cantidad, valorunit: nuevaVenta.valorunit, valortotal: nuevaVenta.valortotal },
         };
