@@ -8,6 +8,7 @@ import {getToken} from '../utils/api.js'
 import ReactLoading from 'react-loading';
 import PrivateComponent from '../components/PrivateComponent';
 
+const baseURL = "https://dry-mountain-91873.herokuapp.com";
 
 const Usuarios = () => {
 
@@ -110,7 +111,7 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
             //enviar info al backend
             const options = {
                 method: 'PATCH',
-                url: 'http://localhost:5000/moduloUsuarios/editar', 
+                url: `${baseURL}/moduloUsuarios/editar/`, 
                 headers: { 'Content-Type': 'application/json', Authorization: getToken() },
                 data: { ... infoNuevoUsuario, id: usuario._id }, 
               };
@@ -134,7 +135,7 @@ const FilaUsuario = ({usuario, setEjecutarConsulta}) => {
      
         const options = {
             method: 'DELETE',
-            url: 'http://localhost:5000/moduloUsuarios/eliminar/',
+            url:  `${baseURL}/moduloUsuarios/eliminar/`,
             headers: { 'Content-Type': 'application/json', Authorization: getToken() },
             data: { id: usuario._id },
           };
